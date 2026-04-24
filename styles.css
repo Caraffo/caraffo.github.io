@@ -272,6 +272,10 @@ img {
   gap: 1.1rem;
 }
 
+.projects-grid-main {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .project-card {
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-m);
@@ -281,18 +285,53 @@ img {
 
 .project-cover {
   height: 180px;
+  padding: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .viajapp-cover {
-  background: radial-gradient(circle at 20% 20%, #2997ff, transparent 45%), linear-gradient(120deg, #0f172a, #111827 50%, #1e293b);
+  background: #182c62;
+}
+
+.project-logo-image {
+  width: min(205px, 78%);
+  max-height: 150px;
+  height: auto;
+  object-fit: contain;
 }
 
 .easy-cover {
   background: radial-gradient(circle at 80% 20%, #0071e3, transparent 35%), linear-gradient(120deg, #04130f, #0b2f23 55%, #12372a);
 }
 
+.tradeagro-cover {
+  background: radial-gradient(circle at 80% 18%, rgba(80, 198, 120, 0.6), transparent 36%), linear-gradient(120deg, #061013, #0a2b30 55%, #17484f);
+}
+
 .iresident-cover {
-  background: radial-gradient(circle at 60% 30%, #4f46e5, transparent 38%), linear-gradient(120deg, #111, #1d1d1f 45%, #2a2a2c);
+  background: #060b16;
+  position: relative;
+  padding: 0;
+}
+
+.iresident-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.95;
+}
+
+.iresident-icon-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(86px, 34%);
+  height: auto;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
 }
 
 .project-content {
@@ -491,6 +530,10 @@ img {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .projects-grid-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 800px) {
@@ -521,6 +564,10 @@ img {
   .projects-grid,
   .capabilities-grid,
   .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid-main {
     grid-template-columns: 1fr;
   }
 }

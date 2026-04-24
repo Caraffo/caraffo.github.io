@@ -18,6 +18,7 @@
         <ul class="nav-links">
           <li><a href="#inicio" data-i18n="nav.home">Home</a></li>
           <li><a href="#proyectos" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#otros-proyectos" data-i18n="nav.otherProjects">Other projects</a></li>
           <li><a href="#experiencia" data-i18n="nav.experience">Experience</a></li>
           <li><a href="#capacidades" data-i18n="nav.capabilities">Capabilities</a></li>
           <li><a href="#educacion" data-i18n="nav.education">Education</a></li>
@@ -44,7 +45,7 @@
         <div class="hero-copy">
           <p class="eyebrow" data-i18n="hero.eyebrow">Systems Engineer · 24 years old</p>
           <h1>Franco Caraffo</h1>
-          <p class="hero-title" data-i18n="hero.title">Lead developer focused on product, architecture, and end-to-end execution.</p>
+          <p class="hero-title" data-i18n="hero.title">Software Developer focused on product, architecture, and end-to-end execution.</p>
           <p class="hero-subtitle" data-i18n="hero.subtitle">Graduated on August 12, 2025. I lead mobile, backend, and cloud delivery in real products with active users.</p>
           <div class="hero-buttons">
             <a href="#proyectos" class="btn primary-btn" data-i18n="hero.projects">View projects</a>
@@ -67,9 +68,11 @@
       <div class="container">
         <h2 class="section-title" data-i18n="projects.title">Featured projects</h2>
         <p class="section-lead" data-i18n="projects.lead">Products and platforms where I led architecture and implementation.</p>
-        <div class="projects-grid">
+        <div class="projects-grid projects-grid-main">
           <article class="project-card">
-            <div class="project-cover viajapp-cover" aria-hidden="true"></div>
+            <div class="project-cover viajapp-cover">
+              <img src="assets/viajapp-logo.png" alt="Viajapp logo" class="project-logo-image">
+            </div>
             <div class="project-content">
               <div class="project-top">
                 <h3>Viajapp</h3>
@@ -80,19 +83,50 @@
               <ul class="tag-list">
                 <li>Flutter</li><li>FastAPI</li><li>PostgreSQL</li><li>Mercado Pago</li><li>FCM</li>
               </ul>
-              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.viajapp.app&hl=es_AR" target="_blank" rel="noreferrer">
-                <i class="fab fa-google-play"></i>
-                <span data-i18n="projects.linkPlay">View on Google Play</span>
+              <a class="project-link" href="https://viajapp.com.ar" target="_blank" rel="noreferrer">
+                <i class="fas fa-globe"></i>
+                <span data-i18n="projects.linkViajapp">Visit website</span>
               </a>
             </div>
           </article>
 
           <article class="project-card">
+            <div class="project-cover iresident-cover">
+              <img src="assets/iresident-bg.png" alt="" class="iresident-bg-image" aria-hidden="true">
+              <img src="assets/iresident-icon.png" alt="iResident logo" class="iresident-icon-image">
+            </div>
+            <div class="project-content">
+              <div class="project-top">
+                <h3>iResident</h3>
+                <span class="project-date" data-i18n="projects.iresident.date">Aug 2025 - Present</span>
+              </div>
+              <p class="project-role" data-i18n="projects.iresident.role">Fullstack Developer at Gilson Housing Partners.</p>
+              <p data-i18n="projects.iresident.desc">I lead multi-tenant Flutter mobile delivery with critical inspection and recertification modules, push/live notifications, and production observability.</p>
+              <ul class="tag-list">
+                <li>Flutter</li><li>Riverpod</li><li>GoRouter</li><li>Firebase</li><li>Sentry</li>
+              </ul>
+              <a class="project-link" href="https://gilsonhousingpartners.com/iresident-services-app/" target="_blank" rel="noreferrer">
+                <i class="fas fa-globe"></i>
+                <span data-i18n="projects.linkIresident">Visit product page</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="otros-proyectos" class="section section-surface reveal">
+      <div class="container">
+        <h2 class="section-title" data-i18n="otherProjects.title">Other projects</h2>
+        <p class="section-lead" data-i18n="otherProjects.lead">Additional products and business platforms delivered for real clients.</p>
+        <div class="projects-grid">
+          <article class="project-card">
             <div class="project-cover easy-cover" aria-hidden="true"></div>
             <div class="project-content">
               <div class="project-top">
                 <h3>Easy Breathing</h3>
-                <span class="project-date" data-i18n="projects.easy.date">2025</span>
+                <span class="project-date" data-i18n="projects.easy.date">2026</span>
               </div>
               <p class="project-role" data-i18n="projects.easy.role">Job and technician management system for an air duct cleaning company.</p>
               <p data-i18n="projects.easy.desc">I built an operational platform with admin/technician roles, reporting, CSV exports, security rules, and continuous delivery on Firebase.</p>
@@ -103,16 +137,16 @@
           </article>
 
           <article class="project-card">
-            <div class="project-cover iresident-cover" aria-hidden="true"></div>
+            <div class="project-cover tradeagro-cover" aria-hidden="true"></div>
             <div class="project-content">
               <div class="project-top">
-                <h3>iResident</h3>
-                <span class="project-date" data-i18n="projects.iresident.date">Aug 2025 - Present</span>
+                <h3>Tradeagro</h3>
+                <span class="project-date" data-i18n="projects.tradeagro.date">2025</span>
               </div>
-              <p class="project-role" data-i18n="projects.iresident.role">Lead developer at Gilson Housing Partners.</p>
-              <p data-i18n="projects.iresident.desc">I lead multi-tenant Flutter mobile delivery with critical inspection and recertification modules, push/live notifications, and production observability.</p>
+              <p class="project-role" data-i18n="projects.tradeagro.role">Business platform for grain/commercial operations.</p>
+              <p data-i18n="projects.tradeagro.desc">I worked on a multi-module web system covering contracts, account movements, operational documents, and internal workflows.</p>
               <ul class="tag-list">
-                <li>Flutter</li><li>Riverpod</li><li>GoRouter</li><li>Firebase</li><li>Sentry</li>
+                <li>PHP</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>MySQL</li>
               </ul>
             </div>
           </article>
@@ -125,7 +159,7 @@
         <h2 class="section-title" data-i18n="experience.title">Experience</h2>
         <div class="timeline">
           <article class="timeline-item">
-            <h3 data-i18n="experience.item1.title">Lead Developer · iResident</h3>
+            <h3 data-i18n="experience.item1.title">Fullstack Developer · iResident</h3>
             <p class="timeline-meta" data-i18n="experience.item1.meta">Gilson Housing Partners · Aug 2025 - Present</p>
             <p data-i18n="experience.item1.desc">Main technical owner of the app, feature-based architecture, multi-client integrations, and continuous business delivery.</p>
           </article>
@@ -133,11 +167,6 @@
             <h3 data-i18n="experience.item2.title">Founder & Developer · Viajapp</h3>
             <p class="timeline-meta" data-i18n="experience.item2.meta">Own product · Aug 2024 - Present</p>
             <p data-i18n="experience.item2.desc">Product conception, development, and evolution across architecture, operations, analytics, and feature growth.</p>
-          </article>
-          <article class="timeline-item">
-            <h3 data-i18n="experience.item3.title">Full-Stack Developer · Easy Breathing</h3>
-            <p class="timeline-meta" data-i18n="experience.item3.meta">Internal management platform · 2025</p>
-            <p data-i18n="experience.item3.desc">Design and implementation of an administrative platform focused on operational efficiency, traceability, and technician control.</p>
           </article>
         </div>
       </div>
