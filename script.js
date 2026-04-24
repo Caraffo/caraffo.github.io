@@ -1,319 +1,182 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Translations
-    const translations = {
-      es: {
-        "nav.home": "Inicio",
-        "nav.about": "Sobre mí",
-        "nav.education": "Educación",
-        "nav.experience": "Experiencia",
-        "nav.skills": "Habilidades",
-        "nav.contact": "Contacto",
-        "hero.title": "Ingeniero en Sistemas",
-        "hero.subtitle": "Desarrollador de Software",
-        "hero.contact": "Contactarme",
-        "hero.download": "Descargar CV",
-        "cv.spanish": "CV (ES)",
-        "cv.english": "CV (EN)",
-        "about.title": "Sobre mí",
-        "about.p1":
-          "Estudiante de quinto año de Ingeniería de Sistemas en la Universidad Nacional del Centro de la Provincia de Buenos Aires (UNICEN). Tengo una sólida formación en programación y desarrollo de software.",
-        "about.p2":
-          "Estoy interesado en iniciar mi carrera profesional en oportunidades que me permitan trabajar de forma remota, híbrida o presencial en Buenos Aires.",
-        "education.title": "Educación",
-        "education.degree1": "Ingeniería en Sistemas",
-        "education.degree2": "Analista Programador Universitario",
-        "education.university": "Universidad Nacional del Centro (UNICEN)",
-        "education.date1": "Marzo 2020 - Actualidad",
-        "education.date2": "Marzo 2020 - Diciembre 2024",
-        "experience.title": "Experiencia",
-        "experience.date1": "Agosto 2024 - Actualidad",
-        "experience.date2": "Marzo 2025 - Abril 2025",
-        "experience.desc1.p1":
-          "Desarrollo independiente de una aplicación móvil diseñada para conectar usuarios que comparten viajes. La plataforma permite publicar y buscar viajes, facilitando el encuentro entre personas con rutas y horarios compatibles.",
-        "experience.desc1.p2": "Tecnologías: Flutter, Dart, Firebase, APIs de geolocalización y mapas.",
-        "experience.desc2.p1":
-          "Diseño y desarrollo de una página web para un emprendimiento familiar dedicado a la producción y venta de miel 100% natural. La web incluye presentación de productos, puntos de venta y formulario de contacto.",
-        "experience.desc2.p2":
-          "Enfoque en experiencia visual atractiva y profesional, con diseño responsive, buena accesibilidad y tiempos de carga optimizados.",
-        "experience.desc2.p3": "Tecnologías: HTML, CSS y JavaScript.",
-        "experience.view": "Ver en Google Play",
-        "experience.viewSite": "Ver sitio web",
-        "skills.title": "Habilidades",
-        "skills.technical": "Técnicas",
-        "skills.soft": "Blandas",
-        "skills.soft1": "Disciplina",
-        "skills.soft2": "Trabajo en equipo",
-        "skills.soft3": "Resolución de problemas",
-        "skills.soft4": "Comunicación efectiva",
-        "skills.soft5": "Adaptabilidad",
-        "skills.soft6": "Familiaridad con métodos ágiles",
-        "skills.soft7": "Flexibilidad",
-        "skills.languages": "Idiomas",
-        "skills.lang1": "Español (Nativo)",
-        "skills.lang2": "Inglés (C1)",
-        "contact.title": "Contacto",
-        "contact.phone": "Teléfono",
-        "contact.location": "Ubicación",
-        "contact.name": "Nombre",
-        "contact.subject": "Asunto",
-        "contact.message": "Mensaje",
-        "contact.send": "Enviar Mensaje",
-        "footer.copyright": "© 2025 Franco Caraffo. Todos los derechos reservados.",
-      },
-      en: {
-        "nav.home": "Home",
-        "nav.about": "About me",
-        "nav.education": "Education",
-        "nav.experience": "Experience",
-        "nav.skills": "Skills",
-        "nav.contact": "Contact",
-        "hero.title": "Systems Engineer",
-        "hero.subtitle": "Software Developer",
-        "hero.contact": "Contact me",
-        "hero.download": "Download CV",
-        "cv.spanish": "CV (ES)",
-        "cv.english": "CV (EN)",
-        "about.title": "About me",
-        "about.p1":
-          "Fifth-year Systems Engineering student at the National University of the Center of Buenos Aires Province (UNICEN). I have a solid background in programming and software development.",
-        "about.p2":
-          "I am interested in starting my professional career in opportunities that allow me to work remotely, hybrid or in-person in Buenos Aires.",
-        "education.title": "Education",
-        "education.degree1": "Systems Engineering",
-        "education.degree2": "University Programmer Analyst",
-        "education.university": "National University of the Center (UNICEN)",
-        "education.date1": "March 2020 - Present",
-        "education.date2": "March 2020 - December 2024",
-        "experience.title": "Experience",
-        "experience.date1": "August 2024 - Present",
-        "experience.date2": "March 2025 - April 2025",
-        "experience.desc1.p1":
-          "Independent development of a mobile application designed to connect users who share trips. The platform allows publishing and searching for trips, facilitating the meeting between people with compatible routes and schedules.",
-        "experience.desc1.p2": "Technologies: Flutter, Dart, Firebase, geolocation and maps APIs.",
-        "experience.desc2.p1":
-          "Design and development of a website for a family business dedicated to the production and sale of 100% natural honey. The website includes product presentation, points of sale, and contact form.",
-        "experience.desc2.p2":
-          "Focus on attractive and professional visual experience, with responsive design, good accessibility, and optimized loading times.",
-        "experience.desc2.p3": "Technologies: HTML, CSS, and JavaScript.",
-        "experience.view": "View on Google Play",
-        "experience.viewSite": "Visit website",
-        "skills.title": "Skills",
-        "skills.technical": "Technical",
-        "skills.soft": "Soft",
-        "skills.soft1": "Discipline",
-        "skills.soft2": "Teamwork",
-        "skills.soft3": "Problem solving",
-        "skills.soft4": "Effective communication",
-        "skills.soft5": "Adaptability",
-        "skills.soft6": "Familiarity with agile methods",
-        "skills.soft7": "Flexibility",
-        "skills.languages": "Languages",
-        "skills.lang1": "Spanish (Native)",
-        "skills.lang2": "English (C1)",
-        "contact.title": "Contact",
-        "contact.phone": "Phone",
-        "contact.location": "Location",
-        "contact.name": "Name",
-        "contact.subject": "Subject",
-        "contact.message": "Message",
-        "contact.send": "Send Message",
-        "footer.copyright": "© 2025 Franco Caraffo. All rights reserved.",
-      },
+  const translations = {
+    es: {
+      "nav.home": "Inicio",
+      "nav.projects": "Proyectos",
+      "nav.experience": "Experiencia",
+      "nav.capabilities": "Capacidades",
+      "nav.education": "Educación",
+      "nav.contact": "Contacto",
+      "hero.eyebrow": "Ingeniero en Sistemas · 24 años",
+      "hero.title": "Software Developer con foco en producto, arquitectura y ejecución end-to-end.",
+      "hero.subtitle": "Graduado el 12 de agosto de 2025. Lidero desarrollo mobile, backend y cloud en productos reales con usuarios activos.",
+      "hero.projects": "Ver proyectos",
+      "hero.contact": "Contactarme",
+      "cv.spanish": "CV en Español",
+      "cv.english": "CV en Inglés",
+      "projects.title": "Proyectos destacados",
+      "projects.lead": "Productos y plataformas en los que lideré arquitectura e implementación.",
+      "projects.viajapp.date": "Ago 2024 - Actualidad",
+      "projects.viajapp.role": "Founder y único developer. Producto de movilidad compartida con operación real.",
+      "projects.viajapp.desc": "Implementé app Flutter + backend FastAPI por capas, pagos con Mercado Pago, notificaciones FCM, auth JWT y migración de datos hacia PostgreSQL.",
+      "projects.linkPlay": "Ver en Google Play",
+      "projects.easy.date": "2025",
+      "projects.easy.role": "Sistema de gestión de trabajos y técnicos para empresa de air duct cleaning.",
+      "projects.easy.desc": "Desarrollé una plataforma operativa con roles admin/técnico, reporting, exportación CSV, reglas de seguridad y despliegue continuo en Firebase.",
+      "projects.iresident.date": "Ago 2025 - Actualidad",
+      "projects.iresident.role": "Fullstack Developer en Gilson Housing Partners.",
+      "projects.iresident.desc": "Lidero desarrollo mobile multi-tenant con Flutter, módulos críticos de inspecciones y recertificación, notificaciones push/live y observabilidad en producción.",
+      "experience.title": "Experiencia",
+      "experience.item1.title": "Fullstack Developer · iResident",
+      "experience.item1.meta": "Gilson Housing Partners · Ago 2025 - Actualidad",
+      "experience.item1.desc": "Responsable técnico principal de la app, arquitectura por features, integraciones multi-cliente y entrega continua de funcionalidades de negocio.",
+      "experience.item2.title": "Founder & Developer · Viajapp",
+      "experience.item2.meta": "Producto propio · Ago 2024 - Actualidad",
+      "experience.item2.desc": "Concepción, desarrollo y evolución integral del producto: desde la arquitectura hasta la operación, analítica y crecimiento de funcionalidades.",
+      "experience.item3.title": "Full-Stack Developer · Easy Breathing",
+      "experience.item3.meta": "Sistema interno de gestión · 2025",
+      "experience.item3.desc": "Diseño e implementación de plataforma administrativa orientada a eficiencia operativa, trazabilidad y control de equipos técnicos.",
+      "capabilities.title": "Capacidades técnicas",
+      "capabilities.mobile.title": "Mobile Product Engineering",
+      "capabilities.mobile.desc": "Flutter avanzado, arquitectura modular, estado con Riverpod/Provider e integraciones nativas cuando el producto lo necesita.",
+      "capabilities.backend.title": "Backend & APIs",
+      "capabilities.backend.desc": "Diseño de APIs, lógica de negocio por capas, auth segura, webhooks y procesos internos para operación y mantenimiento.",
+      "capabilities.cloud.title": "Cloud & Data",
+      "capabilities.cloud.desc": "Firebase y entornos cloud productivos, modelado de datos, migraciones y automatización de despliegues.",
+      "capabilities.product.title": "Product Ownership",
+      "capabilities.product.desc": "Priorización técnica con foco de negocio, ejecución end-to-end y toma de decisiones para escalar productos reales.",
+      "education.title": "Educación",
+      "education.degree1": "Ingeniero en Sistemas",
+      "education.university": "Universidad Nacional del Centro (UNICEN)",
+      "education.date1": "Graduado el 12 de agosto de 2025",
+      "education.degree2": "Analista Programador Universitario",
+      "education.date2": "Finalizado en diciembre de 2024",
+      "contact.title": "Contacto",
+      "contact.locationValue": "Buenos Aires, Argentina",
+      "footer.copyright": "© 2026 Franco Caraffo. Todos los derechos reservados."
+    },
+    en: {
+      "nav.home": "Home",
+      "nav.projects": "Projects",
+      "nav.experience": "Experience",
+      "nav.capabilities": "Capabilities",
+      "nav.education": "Education",
+      "nav.contact": "Contact",
+      "hero.eyebrow": "Systems Engineer · 24 years old",
+      "hero.title": "Software Developer with a focus on product, architecture, and end-to-end execution.",
+      "hero.subtitle": "Graduated on August 12, 2025. I lead mobile, backend, and cloud delivery in real products with active users.",
+      "hero.projects": "View projects",
+      "hero.contact": "Contact me",
+      "cv.spanish": "CV in Spanish",
+      "cv.english": "CV in English",
+      "projects.title": "Featured projects",
+      "projects.lead": "Products and platforms where I led architecture and implementation.",
+      "projects.viajapp.date": "Aug 2024 - Present",
+      "projects.viajapp.role": "Founder and sole developer. Shared mobility product in real operation.",
+      "projects.viajapp.desc": "I built a Flutter app + layered FastAPI backend, Mercado Pago payments, FCM notifications, JWT auth, and data migration to PostgreSQL.",
+      "projects.linkPlay": "View on Google Play",
+      "projects.easy.date": "2025",
+      "projects.easy.role": "Job and technician management system for an air duct cleaning company.",
+      "projects.easy.desc": "I built an operational platform with admin/technician roles, reporting, CSV exports, security rules, and continuous delivery on Firebase.",
+      "projects.iresident.date": "Aug 2025 - Present",
+      "projects.iresident.role": "Lead developer at Gilson Housing Partners.",
+      "projects.iresident.desc": "I lead multi-tenant Flutter mobile delivery with critical inspection and recertification modules, push/live notifications, and production observability.",
+      "experience.title": "Experience",
+      "experience.item1.title": "Lead Developer · iResident",
+      "experience.item1.meta": "Gilson Housing Partners · Aug 2025 - Present",
+      "experience.item1.desc": "Main technical owner of the app, feature-based architecture, multi-client integrations, and continuous business delivery.",
+      "experience.item2.title": "Founder & Developer · Viajapp",
+      "experience.item2.meta": "Own product · Aug 2024 - Present",
+      "experience.item2.desc": "Product conception, development, and evolution across architecture, operations, analytics, and feature growth.",
+      "experience.item3.title": "Full-Stack Developer · Easy Breathing",
+      "experience.item3.meta": "Internal management platform · 2025",
+      "experience.item3.desc": "Design and implementation of an administrative platform focused on operational efficiency, traceability, and technician control.",
+      "capabilities.title": "Technical capabilities",
+      "capabilities.mobile.title": "Mobile Product Engineering",
+      "capabilities.mobile.desc": "Advanced Flutter, modular architecture, Riverpod/Provider state management, and native integrations when required.",
+      "capabilities.backend.title": "Backend & APIs",
+      "capabilities.backend.desc": "API design, layered business logic, secure auth, webhooks, and internal operational processes.",
+      "capabilities.cloud.title": "Cloud & Data",
+      "capabilities.cloud.desc": "Production Firebase and cloud environments, data modeling, migrations, and deployment automation.",
+      "capabilities.product.title": "Product Ownership",
+      "capabilities.product.desc": "Business-driven technical prioritization, end-to-end execution, and product scaling decisions.",
+      "education.title": "Education",
+      "education.degree1": "Systems Engineer",
+      "education.university": "National University of the Center (UNICEN)",
+      "education.date1": "Graduated on August 12, 2025",
+      "education.degree2": "University Programmer Analyst",
+      "education.date2": "Completed in December 2024",
+      "contact.title": "Contact",
+      "contact.locationValue": "Buenos Aires, Argentina",
+      "footer.copyright": "© 2026 Franco Caraffo. All rights reserved."
     }
-  
-    // Mobile Navigation
-    const hamburger = document.querySelector(".hamburger")
-    const navLinks = document.querySelector(".nav-links")
-  
-    if (hamburger) {
-      hamburger.addEventListener("click", function () {
-        this.classList.toggle("active")
-        navLinks.classList.toggle("active")
-      })
-    }
-  
-    // Close mobile menu when clicking on a link
-    const navItems = document.querySelectorAll(".nav-links a")
-    navItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        hamburger.classList.remove("active")
-        navLinks.classList.remove("active")
-      })
-    })
-  
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault()
-  
-        const targetId = this.getAttribute("href")
-        if (targetId === "#") return
-  
-        const targetElement = document.querySelector(targetId)
-        if (targetElement) {
-          const headerHeight = document.querySelector("header").offsetHeight
-          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight
-  
-          window.scrollTo({
-            top: targetPosition,
-            behavior: "smooth",
-          })
+  };
+
+  const esBtn = document.getElementById("es-btn");
+  const enBtn = document.getElementById("en-btn");
+  const siteNav = document.querySelector(".site-nav");
+  const hamburger = document.querySelector(".hamburger");
+  const header = document.querySelector(".site-header");
+
+  const setLanguage = (lang) => {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      const key = element.getAttribute("data-i18n");
+      if (translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+    esBtn.classList.toggle("active", lang === "es");
+    enBtn.classList.toggle("active", lang === "en");
+    localStorage.setItem("language", lang);
+  };
+
+  esBtn.addEventListener("click", () => setLanguage("es"));
+  enBtn.addEventListener("click", () => setLanguage("en"));
+  setLanguage(localStorage.getItem("language") || "en");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    siteNav.classList.toggle("open");
+  });
+
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      siteNav.classList.remove("open");
+      hamburger.classList.remove("active");
+    });
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (event) => {
+      const targetId = anchor.getAttribute("href");
+      const target = document.querySelector(targetId);
+      if (!target) {
+        return;
+      }
+      event.preventDefault();
+      const offset = header.offsetHeight + 8;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
         }
-      })
-    })
-  
-    // Header scroll effect
-    const header = document.querySelector("header")
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        header.style.padding = "0.7rem 0"
-        header.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.1)"
-      } else {
-        header.style.padding = "1rem 0"
-        header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)"
-      }
-    })
-  
-    // Form submission
-    const contactForm = document.getElementById("contact-form")
-    if (contactForm) {
-      contactForm.addEventListener("submit", (e) => {
-        e.preventDefault()
-  
-        // Get form values
-        const name = document.getElementById("name").value
-        const email = document.getElementById("email").value
-        const subject = document.getElementById("subject").value
-        const message = document.getElementById("message").value
-  
-        // Here you would typically send the form data to a server
-        // For this example, we'll just log it and show a success message
-        console.log("Form submitted:", { name, email, subject, message })
-  
-        // Show success message in current language
-        const currentLang = document.documentElement.lang
-        const successMessage =
-          currentLang === "es"
-            ? "¡Gracias por tu mensaje! Te contactaré pronto."
-            : "Thank you for your message! I will contact you soon."
-  
-        alert(successMessage)
-  
-        // Reset form
-        contactForm.reset()
-      })
-    }
-  
-    // Language toggle
-    const esBtn = document.getElementById("es-btn")
-    const enBtn = document.getElementById("en-btn")
-  
-    // Function to change language
-    function changeLanguage(lang) {
-      document.documentElement.lang = lang
-  
-      // Update all elements with data-i18n attribute
-      document.querySelectorAll("[data-i18n]").forEach((element) => {
-        const key = element.getAttribute("data-i18n")
-        if (translations[lang][key]) {
-          element.textContent = translations[lang][key]
-        }
-      })
-  
-      // Update active button
-      if (lang === "es") {
-        esBtn.classList.add("active")
-        enBtn.classList.remove("active")
-      } else {
-        enBtn.classList.add("active")
-        esBtn.classList.remove("active")
-      }
-  
-      // Save language preference
-      localStorage.setItem("language", lang)
-    }
-  
-    if (esBtn && enBtn) {
-      esBtn.addEventListener("click", () => {
-        changeLanguage("es")
-      })
-  
-      enBtn.addEventListener("click", () => {
-        changeLanguage("en")
-      })
-  
-      // Check for saved language preference
-      const savedLanguage = localStorage.getItem("language")
-      if (savedLanguage) {
-        changeLanguage(savedLanguage)
-      }
-    }
-  
-    // Theme toggle
-    const themeToggle = document.querySelector(".theme-toggle")
-    const themeIcon = themeToggle.querySelector("i")
-  
-    // Function to toggle theme
-    function toggleTheme() {
-      // We're already in dark mode by default, so we'll toggle to light mode
-      document.body.classList.toggle("light-mode")
-  
-      if (document.body.classList.contains("light-mode")) {
-        themeIcon.classList.remove("fa-sun")
-        themeIcon.classList.add("fa-moon")
-        localStorage.setItem("theme", "light")
-      } else {
-        themeIcon.classList.remove("fa-moon")
-        themeIcon.classList.add("fa-sun")
-        localStorage.setItem("theme", "dark")
-      }
-    }
-  
-    if (themeToggle) {
-      themeToggle.addEventListener("click", toggleTheme)
-  
-      // Check for saved theme preference
-      const savedTheme = localStorage.getItem("theme")
-      if (savedTheme === "light") {
-        toggleTheme()
-      }
-    }
-  
-    // CV download functionality
-    const cvLinks = document.querySelectorAll(".cv-dropdown-content a")
-    cvLinks.forEach((link) => {
-      link.addEventListener("click", function (e) {
-        // This will trigger the download attribute
-        // No need to prevent default as we want the browser to handle the download
-        console.log("Downloading CV:", this.getAttribute("href"))
-      })
-    })
-  
-    // Animation on scroll
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll(".experience-item, .timeline-item")
-  
-      elements.forEach((element) => {
-        const elementPosition = element.getBoundingClientRect().top
-        const windowHeight = window.innerHeight
-  
-        if (elementPosition < windowHeight - 100) {
-          element.style.opacity = "1"
-          element.style.transform = "translateY(0)"
-        }
-      })
-    }
-  
-    // Set initial styles for animation
-    const elementsToAnimate = document.querySelectorAll(".experience-item, .timeline-item")
-    elementsToAnimate.forEach((element) => {
-      element.style.opacity = "0"
-      element.style.transform = "translateY(20px)"
-      element.style.transition = "opacity 0.5s ease, transform 0.5s ease"
-    })
-  
-    // Run animation on load and scroll
-    window.addEventListener("load", animateOnScroll)
-    window.addEventListener("scroll", animateOnScroll)
-  })
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
+
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 24);
+  });
+});
   

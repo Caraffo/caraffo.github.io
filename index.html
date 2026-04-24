@@ -1,305 +1,221 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Franco Caraffo | Ingeniero en Sistemas</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Franco Caraffo | Systems Engineer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">FC</div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#inicio" data-i18n="nav.home">Inicio</a></li>
-                    <li><a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a></li>
-                    <li><a href="#educacion" data-i18n="nav.education">Educación</a></li>
-                    <li><a href="#experiencia" data-i18n="nav.experience">Experiencia</a></li>
-                    <li><a href="#habilidades" data-i18n="nav.skills">Habilidades</a></li>
-                    <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
-                </ul>
-                <div class="language-toggle">
-                    <button id="es-btn" class="active">ES</button>
-                    <button id="en-btn">EN</button>
-                </div>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo">FC</a>
+      <nav class="site-nav">
+        <ul class="nav-links">
+          <li><a href="#inicio" data-i18n="nav.home">Home</a></li>
+          <li><a href="#proyectos" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#experiencia" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="#capacidades" data-i18n="nav.capabilities">Capabilities</a></li>
+          <li><a href="#educacion" data-i18n="nav.education">Education</a></li>
+          <li><a href="#contacto" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="language-toggle">
+          <button id="es-btn">ES</button>
+          <button id="en-btn" class="active">EN</button>
         </div>
-    </header>
+        <button class="hamburger" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <section id="inicio" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Franco Caraffo</h1>
-                <h2 data-i18n="hero.title">Ingeniero en Sistemas</h2>
-                <p data-i18n="hero.subtitle">Desarrollador de Software</p>
-                <div class="hero-buttons">
-                    <a href="#contacto" class="btn primary-btn" data-i18n="hero.contact">Contactarme</a>
-                    <div class="cv-buttons">
-                        <a href="https://docs.google.com/document/d/1ChICeQUEXw4Fqm-cXZ4KW-Ku0fgEFNNI/edit?usp=sharing&ouid=118297425556355338485&rtpof=true&sd=true" target="_blank" class="btn secondary-btn" download data-i18n="cv.spanish">CV en Español</a>
-                        <a href="https://docs.google.com/document/d/1EwOMdKoooJeKTVPGFq-CflgJ2_3wxCYO/edit?usp=sharing&ouid=118297425556355338485&rtpof=true&sd=true" target="_blank" class="btn secondary-btn" download data-i18n="cv.english">CV en Inglés</a>
-                    </div>                    
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-placeholder">
-                    <img class="foto-cv" src="\foto-cv.png" alt="">
-                </div>
-            </div>
+  <main>
+    <section id="inicio" class="hero reveal">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Systems Engineer · 24 years old</p>
+          <h1>Franco Caraffo</h1>
+          <p class="hero-title" data-i18n="hero.title">Lead developer focused on product, architecture, and end-to-end execution.</p>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Graduated on August 12, 2025. I lead mobile, backend, and cloud delivery in real products with active users.</p>
+          <div class="hero-buttons">
+            <a href="#proyectos" class="btn primary-btn" data-i18n="hero.projects">View projects</a>
+            <a href="#contacto" class="btn secondary-btn" data-i18n="hero.contact">Contact me</a>
+          </div>
+          <div class="cv-links">
+            <a href="https://docs.google.com/document/d/1ChICeQUEXw4Fqm-cXZ4KW-Ku0fgEFNNI/edit?usp=sharing&ouid=118297425556355338485&rtpof=true&sd=true" target="_blank" rel="noreferrer" data-i18n="cv.spanish">CV in Spanish</a>
+            <a href="https://docs.google.com/document/d/1EwOMdKoooJeKTVPGFq-CflgJ2_3wxCYO/edit?usp=sharing&ouid=118297425556355338485&rtpof=true&sd=true" target="_blank" rel="noreferrer" data-i18n="cv.english">CV in English</a>
+          </div>
         </div>
+        <div class="hero-media">
+          <div class="profile-shell">
+            <img class="foto-cv" src="/foto-cv.png" alt="Photo of Franco Caraffo">
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="sobre-mi" class="about">
-        <div class="container">
-            <h2 class="section-title" data-i18n="about.title">Sobre mí</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p data-i18n="about.p1">Estudiante de quinto año de Ingeniería de Sistemas en la Universidad Nacional del Centro de la Provincia de Buenos Aires (UNICEN). Tengo una sólida formación en programación y desarrollo de software.</p>
-                    <p data-i18n="about.p2">Estoy interesado en iniciar mi carrera profesional en oportunidades que me permitan trabajar de forma remota, híbrida o presencial en Buenos Aires.</p>
-                    <div class="location-info">
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Buenos Aires, Argentina</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>caraffo16@gmail.com</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+54 9 2262 620271</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://linkedin.com/in/franco-caraffo" target="_blank">linkedin.com/in/franco-caraffo</a>
-                        </div>
-                    </div>
-                </div>
+    <section id="proyectos" class="section reveal">
+      <div class="container">
+        <h2 class="section-title" data-i18n="projects.title">Featured projects</h2>
+        <p class="section-lead" data-i18n="projects.lead">Products and platforms where I led architecture and implementation.</p>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-cover viajapp-cover" aria-hidden="true"></div>
+            <div class="project-content">
+              <div class="project-top">
+                <h3>Viajapp</h3>
+                <span class="project-date" data-i18n="projects.viajapp.date">Aug 2024 - Present</span>
+              </div>
+              <p class="project-role" data-i18n="projects.viajapp.role">Founder and sole developer. Shared mobility product in real operation.</p>
+              <p data-i18n="projects.viajapp.desc">I built a Flutter app + layered FastAPI backend, Mercado Pago payments, FCM notifications, JWT auth, and data migration to PostgreSQL.</p>
+              <ul class="tag-list">
+                <li>Flutter</li><li>FastAPI</li><li>PostgreSQL</li><li>Mercado Pago</li><li>FCM</li>
+              </ul>
+              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.viajapp.app&hl=es_AR" target="_blank" rel="noreferrer">
+                <i class="fab fa-google-play"></i>
+                <span data-i18n="projects.linkPlay">View on Google Play</span>
+              </a>
             </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-cover easy-cover" aria-hidden="true"></div>
+            <div class="project-content">
+              <div class="project-top">
+                <h3>Easy Breathing</h3>
+                <span class="project-date" data-i18n="projects.easy.date">2025</span>
+              </div>
+              <p class="project-role" data-i18n="projects.easy.role">Job and technician management system for an air duct cleaning company.</p>
+              <p data-i18n="projects.easy.desc">I built an operational platform with admin/technician roles, reporting, CSV exports, security rules, and continuous delivery on Firebase.</p>
+              <ul class="tag-list">
+                <li>Vite</li><li>JavaScript</li><li>Firebase Auth</li><li>Firestore</li><li>Cloud Functions</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-cover iresident-cover" aria-hidden="true"></div>
+            <div class="project-content">
+              <div class="project-top">
+                <h3>iResident</h3>
+                <span class="project-date" data-i18n="projects.iresident.date">Aug 2025 - Present</span>
+              </div>
+              <p class="project-role" data-i18n="projects.iresident.role">Lead developer at Gilson Housing Partners.</p>
+              <p data-i18n="projects.iresident.desc">I lead multi-tenant Flutter mobile delivery with critical inspection and recertification modules, push/live notifications, and production observability.</p>
+              <ul class="tag-list">
+                <li>Flutter</li><li>Riverpod</li><li>GoRouter</li><li>Firebase</li><li>Sentry</li>
+              </ul>
+            </div>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section id="educacion" class="education">
-        <div class="container">
-            <h2 class="section-title" data-i18n="education.title">Educación</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3 data-i18n="education.degree1">Ingeniería en Sistemas</h3>
-                        <h4 data-i18n="education.university">Universidad Nacional del Centro (UNICEN)</h4>
-                        <p class="timeline-date" data-i18n="education.date1">Marzo 2020 - Actualidad</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3 data-i18n="education.degree2">Analista Programador Universitario</h3>
-                        <h4 data-i18n="education.university">Universidad Nacional del Centro (UNICEN)</h4>
-                        <p class="timeline-date" data-i18n="education.date2">Marzo 2020 - Diciembre 2024</p>
-                    </div>
-                </div>
-            </div>
+    <section id="experiencia" class="section section-surface reveal">
+      <div class="container">
+        <h2 class="section-title" data-i18n="experience.title">Experience</h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3 data-i18n="experience.item1.title">Lead Developer · iResident</h3>
+            <p class="timeline-meta" data-i18n="experience.item1.meta">Gilson Housing Partners · Aug 2025 - Present</p>
+            <p data-i18n="experience.item1.desc">Main technical owner of the app, feature-based architecture, multi-client integrations, and continuous business delivery.</p>
+          </article>
+          <article class="timeline-item">
+            <h3 data-i18n="experience.item2.title">Founder & Developer · Viajapp</h3>
+            <p class="timeline-meta" data-i18n="experience.item2.meta">Own product · Aug 2024 - Present</p>
+            <p data-i18n="experience.item2.desc">Product conception, development, and evolution across architecture, operations, analytics, and feature growth.</p>
+          </article>
+          <article class="timeline-item">
+            <h3 data-i18n="experience.item3.title">Full-Stack Developer · Easy Breathing</h3>
+            <p class="timeline-meta" data-i18n="experience.item3.meta">Internal management platform · 2025</p>
+            <p data-i18n="experience.item3.desc">Design and implementation of an administrative platform focused on operational efficiency, traceability, and technician control.</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section id="experiencia" class="experience">
-        <div class="container">
-            <h2 class="section-title" data-i18n="experience.title">Experiencia</h2>
-            <div class="experience-items">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>Viajapp</h3>
-                        <span class="date" data-i18n="experience.date1">Agosto 2024 - Actualidad</span>
-                    </div>
-                    <p data-i18n="experience.desc1.p1">Desarrollo independiente de una aplicación móvil diseñada para conectar usuarios que comparten viajes. La plataforma permite publicar y buscar viajes, facilitando el encuentro entre personas con rutas y horarios compatibles.</p>
-                    <p data-i18n="experience.desc1.p2">Tecnologías: Flutter, Dart, Firebase, APIs de geolocalización y mapas.</p>
-                    <div class="project-link">
-                        <a href="https://play.google.com/store/apps/details?id=com.viajapp.app&hl=es_AR" target="_blank">
-                            <i class="fab fa-google-play"></i> <span data-i18n="experience.view">Ver en Google Play</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>Pura Miel</h3>
-                        <span class="date" data-i18n="experience.date2">Marzo 2025 - Abril 2025</span>
-                    </div>
-                    <p data-i18n="experience.desc2.p1">Diseño y desarrollo de una página web para un emprendimiento familiar dedicado a la producción y venta de miel 100% natural. La web incluye presentación de productos, puntos de venta y formulario de contacto.</p>
-                    <p data-i18n="experience.desc2.p2">Enfoque en experiencia visual atractiva y profesional, con diseño responsive, buena accesibilidad y tiempos de carga optimizados.</p>
-                    <p data-i18n="experience.desc2.p3">Tecnologías: HTML, CSS y JavaScript.</p>
-                    <div class="project-link">
-                        <a href="https://puramieldelacosta.com.ar" target="_blank">
-                            <i class="fas fa-globe"></i> <span data-i18n="experience.viewSite">Ver sitio web</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <section id="capacidades" class="section reveal">
+      <div class="container">
+        <h2 class="section-title" data-i18n="capabilities.title">Technical capabilities</h2>
+        <div class="capabilities-grid">
+          <article class="capability-card">
+            <h3 data-i18n="capabilities.mobile.title">Mobile Product Engineering</h3>
+            <p data-i18n="capabilities.mobile.desc">Advanced Flutter, modular architecture, Riverpod/Provider state management, and native integrations when required.</p>
+          </article>
+          <article class="capability-card">
+            <h3 data-i18n="capabilities.backend.title">Backend & APIs</h3>
+            <p data-i18n="capabilities.backend.desc">API design, layered business logic, secure auth, webhooks, and internal operational processes.</p>
+          </article>
+          <article class="capability-card">
+            <h3 data-i18n="capabilities.cloud.title">Cloud & Data</h3>
+            <p data-i18n="capabilities.cloud.desc">Production Firebase and cloud environments, data modeling, migrations, and deployment automation.</p>
+          </article>
+          <article class="capability-card">
+            <h3 data-i18n="capabilities.product.title">Product Ownership</h3>
+            <p data-i18n="capabilities.product.desc">Business-driven technical prioritization, end-to-end execution, and product scaling decisions.</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section id="habilidades" class="skills">
-        <div class="container">
-            <h2 class="section-title" data-i18n="skills.title">Habilidades</h2>
-            <div class="skills-container">
-                <div class="skills-column">
-                    <h3 data-i18n="skills.technical">Técnicas</h3>
-                    <ul class="skills-list">
-                        <li>
-                            <span>Flutter</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
-                        </li>
-                        <li>
-                            <span>Java</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
-                        </li>
-                        <li>
-                            <span>JavaScript</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
-                        </li>
-                        <li>
-                            <span>HTML</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
-                        </li>
-                        <li>
-                            <span>CSS</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
-                        </li>
-                        <li>
-                            <span>C++</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 65%"></div></div>
-                        </li>
-                        <li>
-                            <span>NodeJS</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 60%"></div></div>
-                        </li>
-                        <li>
-                            <span>Docker</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
-                        </li>
-                        <li>
-                            <span>Git</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
-                        </li>
-                        <li>
-                            <span>SQL</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
-                        </li>
-                        <li>
-                            <span>Firebase</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
-                        </li>
-                        <li>
-                            <span>MongoDB</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 65%"></div></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="skills-column">
-                    <h3 data-i18n="skills.soft">Blandas</h3>
-                    <ul class="skills-list soft-skills">
-                        <li data-i18n="skills.soft1">Disciplina</li>
-                        <li data-i18n="skills.soft2">Trabajo en equipo</li>
-                        <li data-i18n="skills.soft3">Resolución de problemas</li>
-                        <li data-i18n="skills.soft4">Comunicación efectiva</li>
-                        <li data-i18n="skills.soft5">Adaptabilidad</li>
-                        <li data-i18n="skills.soft6">Familiaridad con métodos ágiles</li>
-                        <li data-i18n="skills.soft7">Flexibilidad</li>
-                    </ul>
-                    
-                    <h3 class="languages-title" data-i18n="skills.languages">Idiomas</h3>
-                    <ul class="skills-list languages">
-                        <li>
-                            <span data-i18n="skills.lang1">Español (Nativo)</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 100%"></div></div>
-                        </li>
-                        <li>
-                            <span data-i18n="skills.lang2">Inglés (C1)</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <section id="educacion" class="section section-surface reveal">
+      <div class="container">
+        <h2 class="section-title" data-i18n="education.title">Education</h2>
+        <div class="education-card">
+          <h3 data-i18n="education.degree1">Systems Engineer</h3>
+          <p data-i18n="education.university">National University of the Center (UNICEN)</p>
+          <p class="timeline-meta" data-i18n="education.date1">Graduated on August 12, 2025</p>
+          <h3 data-i18n="education.degree2">University Programmer Analyst</h3>
+          <p class="timeline-meta" data-i18n="education.date2">Completed in December 2024</p>
         </div>
+      </div>
     </section>
 
-    <section id="contacto" class="contact">
-        <div class="container">
-            <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>caraffo16@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3 data-i18n="contact.phone">Teléfono</h3>
-                            <p>+54 9 2262 620271</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3 data-i18n="contact.location">Ubicación</h3>
-                            <p>Buenos Aires, Argentina</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <div>
-                            <h3>LinkedIn</h3>
-                            <p><a href="https://linkedin.com/in/franco-caraffo" target="_blank">linkedin.com/in/franco-caraffo</a></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name" data-i18n="contact.name">Nombre</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject" data-i18n="contact.subject">Asunto</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" data-i18n="contact.message">Mensaje</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn primary-btn" data-i18n="contact.send">Enviar Mensaje</button>
-                    </form>
-                </div> -->
-            </div>
+    <section id="contacto" class="section reveal">
+      <div class="container">
+        <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+        <div class="contact-grid">
+          <a href="mailto:caraffo16@gmail.com" class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>caraffo16@gmail.com</span>
+          </a>
+          <a href="https://linkedin.com/in/franco-caraffo" target="_blank" rel="noreferrer" class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <span>linkedin.com/in/franco-caraffo</span>
+          </a>
+          <a href="tel:+5492262620271" class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+54 9 2262 620271</span>
+          </a>
+          <div class="contact-item">
+            <i class="fas fa-location-dot"></i>
+            <span data-i18n="contact.locationValue">Buenos Aires, Argentina</span>
+          </div>
         </div>
+      </div>
     </section>
+  </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p data-i18n="footer.copyright">&copy; 2025 Franco Caraffo. Todos los derechos reservados.</p>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/franco-caraffo" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:caraffo16@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p data-i18n="footer.copyright">© 2026 Franco Caraffo. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/franco-caraffo" target="_blank" rel="noreferrer"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Caraffo" target="_blank" rel="noreferrer"><i class="fab fa-github"></i></a>
+        <a href="mailto:caraffo16@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
