@@ -3,248 +3,310 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Franco Caraffo | Systems Engineer</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Franco Caraffo · Fullstack Developer</title>
+  <meta name="description" content="Franco Caraffo — Fullstack developer (Flutter + Python). Creator of Viajapp and lead mobile developer of Resident Concierge at Gilson Housing Partners.">
+  <meta name="theme-color" content="#08090c">
+  <meta property="og:title" content="Franco Caraffo · Fullstack Developer">
+  <meta property="og:description" content="Mobile apps and backends, built end to end.">
+  <meta property="og:image" content="assets/foto.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2308090c'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='28' fill='%235b9dff'%3EFC%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css?v=40">
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="#inicio" class="logo">FC</a>
-      <nav class="site-nav">
-        <ul class="nav-links">
-          <li><a href="#inicio" data-i18n="nav.home">Home</a></li>
-          <li><a href="#proyectos" data-i18n="nav.projects">Projects</a></li>
-          <li><a href="#otros-proyectos" data-i18n="nav.otherProjects">Other projects</a></li>
-          <li><a href="#experiencia" data-i18n="nav.experience">Experience</a></li>
-          <li><a href="#capacidades" data-i18n="nav.capabilities">Capabilities</a></li>
-          <li><a href="#educacion" data-i18n="nav.education">Education</a></li>
-          <li><a href="#contacto" data-i18n="nav.contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <div class="language-toggle">
-          <button id="es-btn">ES</button>
-          <button id="en-btn" class="active">EN</button>
-        </div>
-        <button class="hamburger" aria-label="Open navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+    <a href="#top" class="logo" aria-label="Franco Caraffo">FC<span>.</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#more" data-i18n="nav.more">More projects</a>
+      <a href="#about" data-i18n="nav.about">Experience</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="es">ES</button>
+        <button type="button" data-lang="en">EN</button>
       </div>
+      <a class="btn btn-small btn-outline cv-link" data-cv href="#" target="_blank" rel="noreferrer"><i class="fa-regular fa-file-lines"></i> CV</a>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </header>
 
-  <main>
-    <section id="inicio" class="hero reveal">
-      <div class="container hero-grid">
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow" data-i18n="hero.eyebrow">Systems Engineer · 24 years old</p>
-          <h1>Franco Caraffo</h1>
-          <p class="hero-title" data-i18n="hero.title">Software Developer focused on product, architecture, and end-to-end execution.</p>
-          <p class="hero-subtitle" data-i18n="hero.subtitle">Graduated on August 12, 2025. I lead mobile, backend, and cloud delivery in real products with active users.</p>
-          <div class="hero-buttons">
-            <a href="#proyectos" class="btn primary-btn" data-i18n="hero.projects">View projects</a>
-            <a href="#contacto" class="btn secondary-btn" data-i18n="hero.contact">Contact me</a>
-          </div>
-          <div class="cv-links">
-            <a href="https://docs.google.com/document/d/1ChICeQUEXw4Fqm-cXZ4KW-Ku0fgEFNNI/edit?usp=sharing&ouid=118297425556355338485&rtpof=true&sd=true" target="_blank" rel="noreferrer" data-i18n="cv.spanish">CV in Spanish</a>
-            <a href="https://docs.google.com/document/d/1EwOMdKoooJeKTVPGFq-CflgJ2_3wxCYO/edit?usp=sharing&ouid=118297425556355338485&rtpof=true&sd=true" target="_blank" rel="noreferrer" data-i18n="cv.english">CV in English</a>
-          </div>
-        </div>
-        <div class="hero-media">
-          <div class="profile-shell">
-            <img class="foto-cv" src="/foto-cv.png" alt="Photo of Franco Caraffo">
+          <p class="kicker mono intro" style="--d:0s"><span class="pulse"></span><span data-i18n="hero.kicker">Open to new opportunities · Buenos Aires, AR · Remote</span></p>
+          <h1 class="hero-title split-words">Franco Caraffo</h1>
+          <p class="hero-role intro" style="--d:.16s" data-i18n="hero.role">Fullstack Developer · Mobile & Backend</p>
+          <p class="hero-lead intro" style="--d:.24s" data-i18n="hero.lead">Systems Engineer. I build mobile apps with Flutter and backends with Python, from the idea to production. Today I lead the mobile app at Gilson Housing Partners and run my own product, Viajapp.</p>
+          <div class="hero-cta intro" style="--d:.32s">
+            <a href="#work" class="btn btn-primary magnetic"><span data-i18n="hero.cta1">See projects</span><i class="fa-solid fa-arrow-down"></i></a>
+            <a href="#contact" class="btn btn-outline magnetic"><span data-i18n="hero.cta2">Contact me</span></a>
+            <div class="socials">
+              <a href="https://linkedin.com/in/franco-caraffo" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://github.com/Caraffo" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="mailto:caraffo16@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
           </div>
         </div>
+        <figure class="hero-photo intro" style="--d:.2s">
+          <img src="assets/foto.jpg" alt="Franco Caraffo">
+        </figure>
+      </div>
+
+      <div class="wrap">
+        <dl class="hero-stats intro" style="--d:.4s">
+          <div><dt><span data-count="3">3</span></dt><dd data-i18n="stats.apps">apps live on the App Store & Google Play</dd></div>
+          <div><dt><span data-count="350">350</span>+</dt><dd data-i18n="stats.commits">commits at Gilson in the last year</dd></div>
+          <div><dt>2024</dt><dd data-i18n="stats.viajapp">building my own product, Viajapp</dd></div>
+        </dl>
       </div>
     </section>
 
-    <section id="proyectos" class="section reveal">
-      <div class="container">
-        <h2 class="section-title" data-i18n="projects.title">Featured projects</h2>
-        <p class="section-lead" data-i18n="projects.lead">Products and platforms where I led architecture and implementation.</p>
-        <div class="projects-grid projects-grid-main">
-          <article class="project-card">
-            <div class="project-cover viajapp-cover">
-              <img src="assets/viajapp-logo.png" alt="Viajapp logo" class="project-logo-image">
-            </div>
-            <div class="project-content">
-              <div class="project-top">
+    <!-- FEATURED -->
+    <section id="work" class="section">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow mono" data-i18n="work.eyebrow">Featured work</p>
+          <h2 class="section-title split-words" data-i18n="work.title">Products I've built end to end</h2>
+        </header>
+
+        <!-- Viajapp -->
+        <article class="feature spot viajapp reveal">
+          <div class="feature-copy">
+            <div class="feature-head">
+              <img src="assets/logos/viajapp.png" alt="" class="app-icon">
+              <div>
                 <h3>Viajapp</h3>
-                <span class="project-date" data-i18n="projects.viajapp.date">Aug 2024 - Present</span>
+                <p class="mono muted" data-i18n="viajapp.meta">Founder & sole developer · 2024 — present</p>
               </div>
-              <p class="project-role" data-i18n="projects.viajapp.role">Founder and sole developer. Shared mobility product in real operation.</p>
-              <p data-i18n="projects.viajapp.desc">I built a Flutter app + layered FastAPI backend, Mercado Pago payments, FCM notifications, JWT auth, and data migration to PostgreSQL.</p>
-              <ul class="tag-list">
-                <li>Flutter</li><li>FastAPI</li><li>PostgreSQL</li><li>Mercado Pago</li><li>FCM</li>
-              </ul>
-              <a class="project-link" href="https://viajapp.com.ar" target="_blank" rel="noreferrer">
-                <i class="fas fa-globe"></i>
-                <span data-i18n="projects.linkViajapp">Visit website</span>
-              </a>
             </div>
-          </article>
+            <p class="feature-lead" data-i18n="viajapp.lead">A ride-sharing and parcel app for Argentina. Drivers publish trips, passengers book seats or send packages, and everything is paid in-app.</p>
+            <p data-i18n="viajapp.desc">I designed and built all of it: the Flutter app for iOS and Android, a FastAPI backend on PostgreSQL, the landing page and the admin tools.</p>
+            <ul class="highlights stagger">
+              <li data-i18n="viajapp.h1">Mercado Pago payments with webhooks and automatic refunds</li>
+              <li data-i18n="viajapp.h2">Identity verification (email, phone, Nosis and ID photo) required to book or publish</li>
+              <li data-i18n="viajapp.h3">Chat, FCM push, and demand alerts that notify drivers about trips people are looking for</li>
+            </ul>
+            <ul class="tags stagger"><li>Flutter</li><li>FastAPI</li><li>PostgreSQL</li><li>Mercado Pago</li><li>FCM</li><li>Google Maps</li></ul>
+            <div class="links stagger">
+              <a href="https://viajapp.com.ar" target="_blank" rel="noreferrer" class="link"><i class="fa-solid fa-globe"></i> viajapp.com.ar</a>
+              <a href="https://apps.apple.com/us/app/viajapp/id6745457759" target="_blank" rel="noreferrer" class="link"><i class="fa-brands fa-apple"></i> App Store</a>
+              <a href="https://play.google.com/store/apps/details?id=com.viajapp.app" target="_blank" rel="noreferrer" class="link"><i class="fa-brands fa-google-play"></i> Google Play</a>
+            </div>
+          </div>
+          <div class="feature-media phones">
+            <img src="assets/shots/viajapp-2.jpg" alt="Viajapp — explore trips" loading="lazy" class="phone p-back-l">
+            <img src="assets/shots/viajapp-1.jpg" alt="Viajapp — home" loading="lazy" class="phone p-front">
+            <img src="assets/shots/viajapp-4.jpg" alt="Viajapp — booking and payment" loading="lazy" class="phone p-back-r">
+          </div>
+        </article>
 
-          <article class="project-card">
-            <div class="project-cover iresident-cover">
-              <img src="assets/iresident-bg.png" alt="" class="iresident-bg-image" aria-hidden="true">
-              <img src="assets/iresident-icon.png" alt="iResident logo" class="iresident-icon-image">
-            </div>
-            <div class="project-content">
-              <div class="project-top">
-                <h3>iResident</h3>
-                <span class="project-date" data-i18n="projects.iresident.date">Aug 2025 - Present</span>
+        <!-- Resident Concierge -->
+        <article class="feature spot rc reveal">
+          <div class="feature-copy">
+            <div class="feature-head">
+              <img src="assets/logos/rc.png" alt="" class="app-icon light">
+              <div>
+                <h3>Resident Concierge</h3>
+                <p class="mono muted" data-i18n="rc.meta">Gilson Housing Partners · Lead mobile developer · 2025 — present</p>
               </div>
-              <p class="project-role" data-i18n="projects.iresident.role">Fullstack Developer at Gilson Housing Partners.</p>
-              <p data-i18n="projects.iresident.desc">I lead multi-tenant Flutter mobile delivery with critical inspection and recertification modules, push/live notifications, and production observability.</p>
-              <ul class="tag-list">
-                <li>Flutter</li><li>Riverpod</li><li>GoRouter</li><li>Firebase</li><li>Sentry</li>
-              </ul>
-              <a class="project-link" href="https://gilsonhousingpartners.com/iresident-services-app/" target="_blank" rel="noreferrer">
-                <i class="fas fa-globe"></i>
-                <span data-i18n="projects.linkIresident">Visit product page</span>
-              </a>
             </div>
-          </article>
+            <p class="feature-lead" data-i18n="rc.lead">One app for residents of many US public Housing Authorities. They use it for work orders, inspections, annual recertification, chat with staff and community events.</p>
+            <p data-i18n="rc.desc">I'm the main developer of the Flutter app (formerly iResident). I built most of its major modules and the backend endpoints they need in GCCS and the Concierge services.</p>
+            <ul class="highlights stagger">
+              <li data-i18n="rc.h1">Recertification wizard: household, income, assets and expenses, plus documents and a legal signature. It generates each Housing Authority's official PDF packet.</li>
+              <li data-i18n="rc.h2">Live inspector tracking with ETA, shown as Live Activities / Dynamic Island on iOS and live notifications on Android</li>
+              <li data-i18n="rc.h3">Real-time chats on Firestore: support bot with human handoff, inspector, community and specialist chats</li>
+              <li data-i18n="rc.h4">Hybrid auth (GCCS token → Concierge JWT) and Luma, an AI voice assistant for signup</li>
+            </ul>
+            <ul class="tags stagger"><li>Flutter</li><li>Riverpod</li><li>GoRouter</li><li>Firebase</li><li>Sentry</li><li>Django</li><li>FastAPI</li></ul>
+            <div class="links stagger">
+              <a class="link" href="https://gilsonhousingpartners.com/iresident-services-app/" target="_blank" rel="noreferrer"><i class="fa-solid fa-globe"></i> <span data-i18n="rc.link">Product page</span></a>
+              <button type="button" class="link arch-toggle" aria-expanded="false" aria-controls="arch"><i class="fa-solid fa-diagram-project"></i> <span data-i18n="rc.arch">View architecture</span></button>
+            </div>
+          </div>
+          <div class="feature-media phones">
+            <img src="assets/shots/rc-2.jpg" alt="Resident Concierge — screens" loading="lazy" class="phone p-back-l">
+            <img src="assets/shots/rc-1.jpg" alt="Resident Concierge — home" loading="lazy" class="phone p-front">
+            <img src="assets/shots/rc-3.jpg" alt="Resident Concierge — features" loading="lazy" class="phone p-back-r">
+          </div>
 
-        </div>
-      </div>
-    </section>
+          <div class="arch" id="arch" hidden>
+            <p class="mono muted" data-i18n="arch.note">How the platform fits together. I've worked on every piece.</p>
+            <div class="arch-scroll">
+              <svg class="arch-svg" viewBox="0 0 960 430" role="img" aria-label="Architecture diagram">
+                <g class="arch-links">
+                  <path d="M210 215 C 300 215, 300 90, 390 90"/>
+                  <path d="M210 215 L 390 215"/>
+                  <path d="M210 215 C 300 215, 300 340, 390 340"/>
+                  <path d="M570 90 C 640 90, 640 215, 710 215"/>
+                  <path d="M570 215 L 710 215"/>
+                  <path d="M840 110 L 840 180"/>
+                  <path d="M840 320 L 840 250"/>
+                </g>
+                <g class="arch-node main"><rect x="30" y="165" width="180" height="100" rx="18"/><text x="120" y="208">Resident</text><text x="120" y="230">Concierge app</text><text class="sub" x="120" y="252">Flutter · iOS/Android</text></g>
+                <g class="arch-node"><rect x="390" y="50" width="180" height="80" rx="16"/><text x="480" y="86">Auth service</text><text class="sub" x="480" y="108">FastAPI · JWT</text></g>
+                <g class="arch-node"><rect x="390" y="175" width="180" height="80" rx="16"/><text x="480" y="211">Firebase</text><text class="sub" x="480" y="233">FCM · Firestore · Config</text></g>
+                <g class="arch-node"><rect x="390" y="300" width="180" height="80" rx="16"/><text x="480" y="336">Concierge APIs</text><text class="sub" x="480" y="358">Events · Rides · AI</text></g>
+                <g class="arch-node core"><rect x="710" y="180" width="220" height="70" rx="16"/><text x="820" y="212">GCCS</text><text class="sub" x="820" y="234">Django · multi-tenant</text></g>
+                <g class="arch-node"><rect x="740" y="40" width="200" height="70" rx="16"/><text x="840" y="72">Web portal</text><text class="sub" x="840" y="94">admins · Text Blast</text></g>
+                <g class="arch-node"><rect x="740" y="320" width="200" height="70" rx="16"/><text x="840" y="352">iNSPECT</text><text class="sub" x="840" y="374">inspectors · GPS</text></g>
+              </svg>
+            </div>
+          </div>
+        </article>
 
-    <section id="otros-proyectos" class="section section-surface reveal">
-      <div class="container">
-        <h2 class="section-title" data-i18n="otherProjects.title">Other projects</h2>
-        <p class="section-lead" data-i18n="otherProjects.lead">Additional products and business platforms delivered for real clients.</p>
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-cover easy-cover" aria-hidden="true"></div>
-            <div class="project-content">
-              <div class="project-top">
-                <h3>Easy Breathing</h3>
-                <span class="project-date" data-i18n="projects.easy.date">2026</span>
+        <!-- Also at Gilson -->
+        <div class="also reveal">
+          <p class="eyebrow mono" data-i18n="also.eyebrow">Also at Gilson</p>
+          <div class="also-grid">
+            <article class="card spot">
+              <div class="card-head">
+                <span class="tile tile-gccs"><i class="fa-solid fa-server"></i></span>
+                <div><h4>GCCS</h4><p class="mono muted" data-i18n="gccs.meta">Backend · Django · 2025 — present</p></div>
               </div>
-              <p class="project-role" data-i18n="projects.easy.role">Job and technician management system for an air duct cleaning company.</p>
-              <p data-i18n="projects.easy.desc">I built an operational platform with admin/technician roles, reporting, CSV exports, security rules, and continuous delivery on Firebase.</p>
-              <ul class="tag-list">
-                <li>Vite</li><li>JavaScript</li><li>Firebase Auth</li><li>Firestore</li><li>Cloud Functions</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-cover tradeagro-cover" aria-hidden="true"></div>
-            <div class="project-content">
-              <div class="project-top">
-                <h3>Tradeagro</h3>
-                <span class="project-date" data-i18n="projects.tradeagro.date">2025</span>
+              <p data-i18n="gccs.desc">The multi-tenant Django core behind every Housing Authority, with one PostgreSQL schema per client. I build much of the API that Resident Concierge uses: signup and household claims, recertification PDF packets, inspection reminders and rescheduling, Inspection Chat, SMS/push campaigns and KPI exports.</p>
+              <ul class="tags stagger"><li>Django</li><li>PostgreSQL</li><li>Docker</li><li>Twilio</li><li>FCM</li></ul>
+            </article>
+            <article class="card spot">
+              <div class="card-head">
+                <img src="assets/logos/inspect.png" alt="" class="tile tile-img">
+                <div><h4>iNSPECT</h4><p class="mono muted" data-i18n="inspect.meta">Contributor · Flutter · 2025 — present</p></div>
               </div>
-              <p class="project-role" data-i18n="projects.tradeagro.role">Business platform for grain/commercial operations.</p>
-              <p data-i18n="projects.tradeagro.desc">I worked on a multi-module web system covering contracts, account movements, operational documents, and internal workflows.</p>
-              <ul class="tag-list">
-                <li>PHP</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>MySQL</li>
-              </ul>
+              <p data-i18n="inspect.desc">The app inspectors use for NSPIRE / HQS inspections. I wasn't the lead developer, but I built its location layer: background tracking for the whole working day, day sessions synced with the backend, ETA and distance, and the Live Activities that let residents see the inspector coming.</p>
+              <ul class="tags stagger"><li>Flutter</li><li>Geolocator</li><li>Google Maps</li><li>Background location</li></ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MORE PROJECTS -->
+    <section id="more" class="section section-alt">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow mono" data-i18n="more.eyebrow">More projects</p>
+          <h2 class="section-title split-words" data-i18n="more.title">Side projects & client work</h2>
+        </header>
+
+        <div class="more-grid">
+          <article class="card spot reveal">
+            <div class="card-head">
+              <span class="tile tile-bookit">B</span>
+              <div><h4>BooKit</h4><p class="mono muted" data-i18n="bookit.meta">Co-founder · with 2 friends · 2026</p></div>
             </div>
+            <p data-i18n="bookit.desc">A marketplace for booking local services such as barbers, tattoo studios and beauty salons. It supports scheduled appointments and walk-in queues, with a map of nearby shops.</p>
+            <ul class="tags stagger"><li>Flutter</li><li>Supabase</li><li>PostGIS</li><li>OpenStreetMap</li></ul>
           </article>
+
+          <article class="card spot reveal">
+            <div class="card-head">
+              <img src="assets/logos/claudio-normal.png" alt="" class="tile tile-img round">
+              <div><h4>Claudio</h4><p class="mono muted" data-i18n="claudio.meta">Personal project · 2026</p></div>
+            </div>
+            <p data-i18n="claudio.desc">My personal AI assistant. It's a Flutter app connected over WebSocket to a Node/TypeScript server that runs Claude with tools for finances, notes and activity. It supports voice input and reads receipts.</p>
+            <ul class="tags stagger"><li>Flutter</li><li>TypeScript</li><li>WebSocket</li><li>Claude API</li><li>Firestore</li></ul>
+          </article>
+
+          <article class="card spot reveal">
+            <div class="card-head">
+              <span class="tile tile-easy"><i class="fa-solid fa-wind"></i></span>
+              <div><h4>Easy Breathing</h4><p class="mono muted" data-i18n="easy.meta">Client project · Private · 2026</p></div>
+            </div>
+            <p data-i18n="easy.desc">An internal CRM for an HVAC and air-duct cleaning company. It tracks jobs, technicians, expenses and P&amp;L reports.</p>
+            <ul class="tags stagger"><li>React</li><li>TypeScript</li><li>Firebase</li><li>Cloud Functions</li></ul>
+          </article>
+        </div>
+
+        <ul class="archive reveal">
+          <li><span class="archive-name">Tradeagro</span><span class="archive-desc" data-i18n="archive.trade">Client extranet for a grain company</span><span class="mono muted">PHP · MySQL · 2024</span></li>
+          <li><a class="archive-name" href="https://puramieldelacosta.com.ar" target="_blank" rel="noreferrer">Pura Miel <i class="fa-solid fa-arrow-up-right-from-square"></i></a><span class="archive-desc" data-i18n="archive.miel">Website for a honey producer</span><span class="mono muted">HTML · CSS · JS · 2024</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE + SKILLS -->
+    <section id="about" class="section">
+      <div class="wrap about-grid">
+        <div class="reveal">
+          <p class="eyebrow mono" data-i18n="about.eyebrow">Experience & education</p>
+          <ol class="timeline stagger">
+            <li><span class="mono">2025 — <span data-i18n="t.now">present</span></span><h4 data-i18n="t.1t">Fullstack Developer · Gilson Housing Partners</h4><p data-i18n="t.1d">Resident Concierge (lead mobile), GCCS, iNSPECT and the Concierge services.</p></li>
+            <li><span class="mono">2024 — <span data-i18n="t.now">present</span></span><h4 data-i18n="t.2t">Founder & Developer · Viajapp</h4><p data-i18n="t.2d">Product, design, mobile, backend, payments and operations.</p></li>
+            <li><span class="mono">2025</span><h4 data-i18n="t.3t">Systems Engineer · UNICEN</h4><p data-i18n="t.3d">Universidad Nacional del Centro de la Provincia de Buenos Aires.</p></li>
+            <li><span class="mono">2024</span><h4 data-i18n="t.4t">University Programmer Analyst · UNICEN</h4></li>
+          </ol>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow mono" data-i18n="skills.eyebrow">Skills</p>
+          <div class="skills stagger">
+            <article class="skill spot">
+              <span class="skill-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
+              <h4 data-i18n="skills.mobile">Mobile</h4>
+              <p class="skill-note" data-i18n="skills.mobileNote">Production apps on iOS & Android</p>
+              <ul class="chips"><li class="core">Flutter</li><li class="core">Dart</li><li>Riverpod</li><li>GoRouter</li><li>Freezed</li><li>Live Activities</li><li>Google Maps</li></ul>
+            </article>
+            <article class="skill spot">
+              <span class="skill-icon"><i class="fa-solid fa-server"></i></span>
+              <h4 data-i18n="skills.backend">Backend</h4>
+              <p class="skill-note" data-i18n="skills.backendNote">APIs, auth, payments & real time</p>
+              <ul class="chips"><li class="core">Python</li><li class="core">FastAPI</li><li class="core">Django</li><li>SQLAlchemy</li><li>Node.js</li><li>TypeScript</li><li>WebSockets</li></ul>
+            </article>
+            <article class="skill spot">
+              <span class="skill-icon"><i class="fa-solid fa-database"></i></span>
+              <h4 data-i18n="skills.data">Data & Cloud</h4>
+              <p class="skill-note" data-i18n="skills.dataNote">Modeling, migrations & deploys</p>
+              <ul class="chips"><li class="core">PostgreSQL</li><li class="core">Firebase</li><li>Supabase</li><li>Alembic</li><li>Docker</li><li>Sentry</li></ul>
+            </article>
+            <article class="skill spot">
+              <span class="skill-icon"><i class="fa-solid fa-toolbox"></i></span>
+              <h4 data-i18n="skills.other">Also</h4>
+              <p class="skill-note" data-i18n="skills.otherNote">Tools and ways of working</p>
+              <ul class="chips"><li>Mercado Pago</li><li>AI APIs</li><li>Git</li><li>React</li><li data-i18n="skills.en">English C1</li><li data-i18n="skills.es">Spanish (native)</li></ul>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="experiencia" class="section section-surface reveal">
-      <div class="container">
-        <h2 class="section-title" data-i18n="experience.title">Experience</h2>
-        <div class="timeline">
-          <article class="timeline-item">
-            <h3 data-i18n="experience.item1.title">Fullstack Developer · iResident</h3>
-            <p class="timeline-meta" data-i18n="experience.item1.meta">Gilson Housing Partners · Aug 2025 - Present</p>
-            <p data-i18n="experience.item1.desc">Main technical owner of the app, feature-based architecture, multi-client integrations, and continuous business delivery.</p>
-          </article>
-          <article class="timeline-item">
-            <h3 data-i18n="experience.item2.title">Founder & Developer · Viajapp</h3>
-            <p class="timeline-meta" data-i18n="experience.item2.meta">Own product · Aug 2024 - Present</p>
-            <p data-i18n="experience.item2.desc">Product conception, development, and evolution across architecture, operations, analytics, and feature growth.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="capacidades" class="section reveal">
-      <div class="container">
-        <h2 class="section-title" data-i18n="capabilities.title">Technical capabilities</h2>
-        <div class="capabilities-grid">
-          <article class="capability-card">
-            <h3 data-i18n="capabilities.mobile.title">Mobile Product Engineering</h3>
-            <p data-i18n="capabilities.mobile.desc">Advanced Flutter, modular architecture, Riverpod/Provider state management, and native integrations when required.</p>
-          </article>
-          <article class="capability-card">
-            <h3 data-i18n="capabilities.backend.title">Backend & APIs</h3>
-            <p data-i18n="capabilities.backend.desc">API design, layered business logic, secure auth, webhooks, and internal operational processes.</p>
-          </article>
-          <article class="capability-card">
-            <h3 data-i18n="capabilities.cloud.title">Cloud & Data</h3>
-            <p data-i18n="capabilities.cloud.desc">Production Firebase and cloud environments, data modeling, migrations, and deployment automation.</p>
-          </article>
-          <article class="capability-card">
-            <h3 data-i18n="capabilities.product.title">Product Ownership</h3>
-            <p data-i18n="capabilities.product.desc">Business-driven technical prioritization, end-to-end execution, and product scaling decisions.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="educacion" class="section section-surface reveal">
-      <div class="container">
-        <h2 class="section-title" data-i18n="education.title">Education</h2>
-        <div class="education-card">
-          <h3 data-i18n="education.degree1">Systems Engineer</h3>
-          <p data-i18n="education.university">National University of the Center (UNICEN)</p>
-          <p class="timeline-meta" data-i18n="education.date1">Graduated on August 12, 2025</p>
-          <h3 data-i18n="education.degree2">University Programmer Analyst</h3>
-          <p class="timeline-meta" data-i18n="education.date2">Completed in December 2024</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacto" class="section reveal">
-      <div class="container">
-        <h2 class="section-title" data-i18n="contact.title">Contact</h2>
-        <div class="contact-grid">
-          <a href="mailto:caraffo16@gmail.com" class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <span>caraffo16@gmail.com</span>
-          </a>
-          <a href="https://linkedin.com/in/franco-caraffo" target="_blank" rel="noreferrer" class="contact-item">
-            <i class="fab fa-linkedin"></i>
-            <span>linkedin.com/in/franco-caraffo</span>
-          </a>
-          <a href="tel:+5492262620271" class="contact-item">
-            <i class="fas fa-phone"></i>
-            <span>+54 9 2262 620271</span>
-          </a>
-          <div class="contact-item">
-            <i class="fas fa-location-dot"></i>
-            <span data-i18n="contact.locationValue">Buenos Aires, Argentina</span>
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="wrap">
+        <div class="contact-box spot reveal">
+          <p class="eyebrow mono" data-i18n="contact.eyebrow">Contact</p>
+          <h2 class="contact-title split-words" data-i18n="contact.title">Let's work together.</h2>
+          <p class="muted" data-i18n="contact.lead">I'm open to fullstack and mobile roles, remote or hybrid. I usually reply within a day.</p>
+          <button class="email-btn magnetic" type="button" data-email="caraffo16@gmail.com">
+            <span class="email-text">caraffo16@gmail.com</span>
+            <i class="fa-regular fa-copy"></i>
+          </button>
+          <div class="links center">
+            <a href="https://linkedin.com/in/franco-caraffo" target="_blank" rel="noreferrer" class="link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://github.com/Caraffo" target="_blank" rel="noreferrer" class="link"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a data-cv href="#" target="_blank" rel="noreferrer" class="link"><i class="fa-regular fa-file-lines"></i> <span data-i18n="contact.cv">Download CV</span></a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p data-i18n="footer.copyright">© 2026 Franco Caraffo. All rights reserved.</p>
-      <div class="social-links">
-        <a href="https://linkedin.com/in/franco-caraffo" target="_blank" rel="noreferrer"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/Caraffo" target="_blank" rel="noreferrer"><i class="fab fa-github"></i></a>
-        <a href="mailto:caraffo16@gmail.com"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
+  <footer class="site-footer wrap">
+    <span class="mono muted">© <span class="year">2026</span> Franco Caraffo</span>
+    <a href="#top" class="mono muted to-top" data-i18n="footer.top">Back to top ↑</a>
   </footer>
 
-  <script src="script.js"></script>
+  <div class="toast mono" role="status" aria-live="polite"></div>
+  <script src="script.js?v=41"></script>
 </body>
 </html>

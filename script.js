@@ -1,190 +1,331 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const translations = {
-    es: {
-      "nav.home": "Inicio",
-      "nav.projects": "Proyectos",
-      "nav.otherProjects": "Otros proyectos",
-      "nav.experience": "Experiencia",
-      "nav.capabilities": "Capacidades",
-      "nav.education": "Educación",
-      "nav.contact": "Contacto",
-      "hero.eyebrow": "Ingeniero en Sistemas · 24 años",
-      "hero.title": "Software Developer con foco en producto, arquitectura y ejecución end-to-end.",
-      "hero.subtitle": "Graduado el 12 de agosto de 2025. Lidero desarrollo mobile, backend y cloud en productos reales con usuarios activos.",
-      "hero.projects": "Ver proyectos",
-      "hero.contact": "Contactarme",
-      "cv.spanish": "CV en Español",
-      "cv.english": "CV en Inglés",
-      "projects.title": "Proyectos destacados",
-      "projects.lead": "Productos y plataformas en los que lideré arquitectura e implementación.",
-      "projects.viajapp.date": "Ago 2024 - Actualidad",
-      "projects.viajapp.role": "Founder y único developer. Producto de movilidad compartida con operación real.",
-      "projects.viajapp.desc": "Implementé app Flutter + backend FastAPI por capas, pagos con Mercado Pago, notificaciones FCM, auth JWT y migración de datos hacia PostgreSQL.",
-      "projects.linkViajapp": "Visitar sitio web",
-      "projects.easy.date": "2026",
-      "projects.easy.role": "Sistema de gestión de trabajos y técnicos para empresa de air duct cleaning.",
-      "projects.easy.desc": "Desarrollé una plataforma operativa con roles admin/técnico, reporting, exportación CSV, reglas de seguridad y despliegue continuo en Firebase.",
-      "projects.iresident.date": "Ago 2025 - Actualidad",
-      "projects.iresident.role": "Fullstack Developer en Gilson Housing Partners.",
-      "projects.iresident.desc": "Lidero desarrollo mobile multi-tenant con Flutter, módulos críticos de inspecciones y recertificación, notificaciones push/live y observabilidad en producción.",
-      "projects.linkIresident": "Ver página del producto",
-      "otherProjects.title": "Otros proyectos",
-      "otherProjects.lead": "Productos adicionales y plataformas de negocio implementadas para clientes reales.",
-      "experience.title": "Experiencia",
-      "experience.item1.title": "Fullstack Developer · iResident",
-      "experience.item1.meta": "Gilson Housing Partners · Ago 2025 - Actualidad",
-      "experience.item1.desc": "Responsable técnico principal de la app, arquitectura por features, integraciones multi-cliente y entrega continua de funcionalidades de negocio.",
-      "experience.item2.title": "Founder & Developer · Viajapp",
-      "experience.item2.meta": "Producto propio · Ago 2024 - Actualidad",
-      "experience.item2.desc": "Concepción, desarrollo y evolución integral del producto: desde la arquitectura hasta la operación, analítica y crecimiento de funcionalidades.",
-      "projects.tradeagro.date": "2025",
-      "projects.tradeagro.role": "Plataforma empresarial para operaciones comerciales y de granos.",
-      "projects.tradeagro.desc": "Trabajé en un sistema web multi-módulo con contratos, movimientos de cuenta, documentación operativa y flujos internos.",
-      "capabilities.title": "Capacidades técnicas",
-      "capabilities.mobile.title": "Mobile Product Engineering",
-      "capabilities.mobile.desc": "Flutter avanzado, arquitectura modular, estado con Riverpod/Provider e integraciones nativas cuando el producto lo necesita.",
-      "capabilities.backend.title": "Backend & APIs",
-      "capabilities.backend.desc": "Diseño de APIs, lógica de negocio por capas, auth segura, webhooks y procesos internos para operación y mantenimiento.",
-      "capabilities.cloud.title": "Cloud & Data",
-      "capabilities.cloud.desc": "Firebase y entornos cloud productivos, modelado de datos, migraciones y automatización de despliegues.",
-      "capabilities.product.title": "Product Ownership",
-      "capabilities.product.desc": "Priorización técnica con foco de negocio, ejecución end-to-end y toma de decisiones para escalar productos reales.",
-      "education.title": "Educación",
-      "education.degree1": "Ingeniero en Sistemas",
-      "education.university": "Universidad Nacional del Centro (UNICEN)",
-      "education.date1": "Graduado el 12 de agosto de 2025",
-      "education.degree2": "Analista Programador Universitario",
-      "education.date2": "Finalizado en diciembre de 2024",
-      "contact.title": "Contacto",
-      "contact.locationValue": "Buenos Aires, Argentina",
-      "footer.copyright": "© 2026 Franco Caraffo. Todos los derechos reservados."
-    },
-    en: {
-      "nav.home": "Home",
-      "nav.projects": "Projects",
-      "nav.otherProjects": "Other projects",
-      "nav.experience": "Experience",
-      "nav.capabilities": "Capabilities",
-      "nav.education": "Education",
-      "nav.contact": "Contact",
-      "hero.eyebrow": "Systems Engineer · 24 years old",
-      "hero.title": "Software Developer with a focus on product, architecture, and end-to-end execution.",
-      "hero.subtitle": "Graduated on August 12, 2025. I lead mobile, backend, and cloud delivery in real products with active users.",
-      "hero.projects": "View projects",
-      "hero.contact": "Contact me",
-      "cv.spanish": "CV in Spanish",
-      "cv.english": "CV in English",
-      "projects.title": "Featured projects",
-      "projects.lead": "Products and platforms where I led architecture and implementation.",
-      "projects.viajapp.date": "Aug 2024 - Present",
-      "projects.viajapp.role": "Founder and sole developer. Shared mobility product in real operation.",
-      "projects.viajapp.desc": "I built a Flutter app + layered FastAPI backend, Mercado Pago payments, FCM notifications, JWT auth, and data migration to PostgreSQL.",
-      "projects.linkViajapp": "Visit website",
-      "projects.easy.date": "2026",
-      "projects.easy.role": "Job and technician management system for an air duct cleaning company.",
-      "projects.easy.desc": "I built an operational platform with admin/technician roles, reporting, CSV exports, security rules, and continuous delivery on Firebase.",
-      "projects.iresident.date": "Aug 2025 - Present",
-      "projects.iresident.role": "Fullstack Developer at Gilson Housing Partners.",
-      "projects.iresident.desc": "I lead multi-tenant Flutter mobile delivery with critical inspection and recertification modules, push/live notifications, and production observability.",
-      "projects.linkIresident": "Visit product page",
-      "otherProjects.title": "Other projects",
-      "otherProjects.lead": "Additional products and business platforms delivered for real clients.",
-      "experience.title": "Experience",
-      "experience.item1.title": "Fullstack Developer · iResident",
-      "experience.item1.meta": "Gilson Housing Partners · Aug 2025 - Present",
-      "experience.item1.desc": "Main technical owner of the app, feature-based architecture, multi-client integrations, and continuous business delivery.",
-      "experience.item2.title": "Founder & Developer · Viajapp",
-      "experience.item2.meta": "Own product · Aug 2024 - Present",
-      "experience.item2.desc": "Product conception, development, and evolution across architecture, operations, analytics, and feature growth.",
-      "projects.tradeagro.date": "2025",
-      "projects.tradeagro.role": "Business platform for grain/commercial operations.",
-      "projects.tradeagro.desc": "I worked on a multi-module web system covering contracts, account movements, operational documents, and internal workflows.",
-      "capabilities.title": "Technical capabilities",
-      "capabilities.mobile.title": "Mobile Product Engineering",
-      "capabilities.mobile.desc": "Advanced Flutter, modular architecture, Riverpod/Provider state management, and native integrations when required.",
-      "capabilities.backend.title": "Backend & APIs",
-      "capabilities.backend.desc": "API design, layered business logic, secure auth, webhooks, and internal operational processes.",
-      "capabilities.cloud.title": "Cloud & Data",
-      "capabilities.cloud.desc": "Production Firebase and cloud environments, data modeling, migrations, and deployment automation.",
-      "capabilities.product.title": "Product Ownership",
-      "capabilities.product.desc": "Business-driven technical prioritization, end-to-end execution, and product scaling decisions.",
-      "education.title": "Education",
-      "education.degree1": "Systems Engineer",
-      "education.university": "National University of the Center (UNICEN)",
-      "education.date1": "Graduated on August 12, 2025",
-      "education.degree2": "University Programmer Analyst",
-      "education.date2": "Completed in December 2024",
-      "contact.title": "Contact",
-      "contact.locationValue": "Buenos Aires, Argentina",
-      "footer.copyright": "© 2026 Franco Caraffo. All rights reserved."
-    }
+(() => {
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const CV = {
+    en: "assets/cv/Franco-Caraffo-CV-EN.pdf",
+    es: "assets/cv/Franco-Caraffo-CV-ES.pdf"
   };
 
-  const esBtn = document.getElementById("es-btn");
-  const enBtn = document.getElementById("en-btn");
-  const siteNav = document.querySelector(".site-nav");
-  const hamburger = document.querySelector(".hamburger");
-  const header = document.querySelector(".site-header");
+  /* ---------------- i18n ---------------- */
+  const es = {
+    "nav.work": "Proyectos",
+    "nav.more": "Más proyectos",
+    "nav.about": "Experiencia",
+    "nav.contact": "Contacto",
 
-  const setLanguage = (lang) => {
+    "hero.kicker": "Abierto a nuevas oportunidades · Buenos Aires, AR · Remoto",
+    "hero.role": "Desarrollador Fullstack · Mobile y Backend",
+    "hero.lead": "Ingeniero de Sistemas. Desarrollo apps mobile con Flutter y backends con Python, desde la idea hasta producción. Hoy lidero la app mobile en Gilson Housing Partners y llevo adelante mi propio producto, Viajapp.",
+    "hero.cta1": "Ver proyectos",
+    "hero.cta2": "Contactarme",
+    "stats.apps": "apps publicadas en App Store y Google Play",
+    "stats.commits": "commits en Gilson en el último año",
+    "stats.viajapp": "desarrollando mi propio producto, Viajapp",
+
+    "work.eyebrow": "Proyectos destacados",
+    "work.title": "Productos que construí de punta a punta",
+    "viajapp.meta": "Fundador y único desarrollador · 2024 — hoy",
+    "viajapp.lead": "App de viajes compartidos y envío de paquetes en Argentina. Los conductores publican viajes, los pasajeros reservan asientos o mandan paquetes y todo se paga dentro de la app.",
+    "viajapp.desc": "La diseñé y la desarrollé entera: la app en Flutter para iOS y Android, un backend en FastAPI sobre PostgreSQL, la landing y las herramientas de administración.",
+    "viajapp.h1": "Pagos con Mercado Pago, con webhooks y reembolsos automáticos",
+    "viajapp.h2": "Verificación de identidad (email, teléfono, Nosis y foto de DNI), obligatoria para reservar o publicar",
+    "viajapp.h3": "Chat, notificaciones push con FCM y avisos de demanda que les muestran a los conductores qué viajes se están buscando",
+
+    "rc.meta": "Gilson Housing Partners · Desarrollador mobile principal · 2025 — hoy",
+    "rc.lead": "Una sola app para los residentes de muchas Housing Authorities públicas de EE.UU. La usan para órdenes de trabajo, inspecciones, la recertificación anual, el chat con el staff y los eventos de la comunidad.",
+    "rc.desc": "Soy el desarrollador principal de la app en Flutter (antes iResident). Hice la mayoría de sus módulos grandes y los endpoints de backend que necesitan, en GCCS y en los servicios de Concierge.",
+    "rc.h1": "Wizard de recertificación: grupo familiar, ingresos, activos y gastos, más documentos y firma legal. Genera el paquete PDF oficial de cada Housing Authority.",
+    "rc.h2": "Seguimiento del inspector en vivo con ETA, que aparece como Live Activity / Dynamic Island en iOS y como notificación en vivo en Android",
+    "rc.h3": "Chats en tiempo real sobre Firestore: bot de soporte que deriva a un agente humano, chat con el inspector, chat comunitario y chats con especialistas",
+    "rc.h4": "Autenticación híbrida (token de GCCS → JWT de Concierge) y Luma, un asistente de voz con IA para el registro",
+    "rc.link": "Página del producto",
+    "rc.arch": "Ver arquitectura",
+    "rc.archHide": "Ocultar arquitectura",
+    "arch.note": "Cómo se conecta la plataforma. Trabajé en cada una de las piezas.",
+
+    "also.eyebrow": "También en Gilson",
+    "gccs.meta": "Backend · Django · 2025 — hoy",
+    "gccs.desc": "El núcleo multi-tenant en Django detrás de cada Housing Authority, con un schema de PostgreSQL por cliente. Construyo buena parte de la API que usa Resident Concierge: registro y reclamo de jefe de hogar, paquetes PDF de recertificación, recordatorios y reprogramación de inspecciones, Inspection Chat, campañas de SMS/push y exportación de KPIs.",
+    "inspect.meta": "Colaborador · Flutter · 2025 — hoy",
+    "inspect.desc": "La app que usan los inspectores para las inspecciones NSPIRE / HQS. No fui el desarrollador principal, pero hice su capa de ubicación: seguimiento en segundo plano durante toda la jornada, jornadas sincronizadas con el backend, ETA y distancia, y las Live Activities que les permiten a los residentes ver llegar al inspector.",
+
+    "more.eyebrow": "Más proyectos",
+    "more.title": "Proyectos propios y para clientes",
+    "bookit.meta": "Cofundador · con 2 amigos · 2026",
+    "bookit.desc": "Un marketplace para reservar servicios locales, como barberías, estudios de tatuajes y centros de estética. Permite turnos programados y atención por orden de llegada, con un mapa de comercios cercanos.",
+    "claudio.meta": "Proyecto personal · 2026",
+    "claudio.desc": "Mi asistente personal con IA. Es una app en Flutter conectada por WebSocket a un servidor en Node/TypeScript que corre Claude, con herramientas para finanzas, notas y actividad. Acepta voz y lee tickets.",
+    "easy.meta": "Proyecto para cliente · Privado · 2026",
+    "easy.desc": "Un CRM interno para una empresa de climatización y limpieza de ductos. Registra trabajos, técnicos, gastos y reportes de resultados (P&L).",
+    "archive.trade": "Extranet de clientes para una empresa de granos",
+    "archive.miel": "Sitio web para un productor de miel",
+
+    "about.eyebrow": "Experiencia y formación",
+    "t.now": "hoy",
+    "t.1t": "Desarrollador Fullstack · Gilson Housing Partners",
+    "t.1d": "Resident Concierge (mobile principal), GCCS, iNSPECT y los servicios de Concierge.",
+    "t.2t": "Fundador y desarrollador · Viajapp",
+    "t.2d": "Producto, diseño, mobile, backend, pagos y operación.",
+    "t.3t": "Ingeniero de Sistemas · UNICEN",
+    "t.3d": "Universidad Nacional del Centro de la Provincia de Buenos Aires.",
+    "t.4t": "Analista Programador Universitario · UNICEN",
+    "skills.eyebrow": "Skills",
+    "skills.mobile": "Mobile",
+    "skills.backend": "Backend",
+    "skills.data": "Datos y Cloud",
+    "skills.other": "También",
+    "skills.mobileNote": "Apps en producción para iOS y Android",
+    "skills.backendNote": "APIs, autenticación, pagos y tiempo real",
+    "skills.dataNote": "Modelado, migraciones y deploys",
+    "skills.otherNote": "Herramientas y forma de trabajo",
+    "skills.en": "Inglés C1",
+    "skills.es": "Español (nativo)",
+
+    "contact.eyebrow": "Contacto",
+    "contact.title": "Trabajemos juntos.",
+    "contact.lead": "Estoy abierto a posiciones fullstack y mobile, remotas o híbridas. Suelo responder en el día.",
+    "contact.cv": "Descargar CV",
+    "footer.top": "Volver arriba ↑",
+    "toast.copied": "Email copiado ✓"
+  };
+  const en = { "toast.copied": "Email copied ✓", "rc.archHide": "Hide architecture" };
+  $$("[data-i18n]").forEach((el) => { en[el.dataset.i18n] = el.textContent; });
+  const dict = { en, es };
+
+  // English by default; only a language the visitor picked is remembered.
+  let lang = "en";
+  try { lang = localStorage.getItem("lang-choice") || "en"; } catch (_) {}
+  if (!dict[lang]) lang = "en";
+
+  const archToggle = $(".arch-toggle");
+  const archLabel = $("span", archToggle);
+  const arch = $("#arch");
+
+  function applyLang(next) {
+    lang = next;
     document.documentElement.lang = lang;
-    document.querySelectorAll("[data-i18n]").forEach((element) => {
-      const key = element.getAttribute("data-i18n");
-      if (translations[lang][key]) {
-        element.textContent = translations[lang][key];
-      }
+    $$("[data-i18n]").forEach((el) => {
+      const v = dict[lang][el.dataset.i18n];
+      if (v != null) el.textContent = v;
     });
-    esBtn.classList.toggle("active", lang === "es");
-    enBtn.classList.toggle("active", lang === "en");
-    localStorage.setItem("language", lang);
-  };
+    archLabel.textContent = dict[lang][arch.hidden ? "rc.arch" : "rc.archHide"];
+    $$("[data-cv]").forEach((a) => (a.href = CV[lang]));
+    $$(".lang button").forEach((b) => b.classList.toggle("active", b.dataset.lang === lang));
+    $$(".split-words").forEach(splitWords);
+  }
+  function splitWords(el) {
+    const words = el.textContent.trim().split(/\s+/);
+    el.setAttribute("aria-label", words.join(" "));
+    el.innerHTML = words.map((w, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(" ");
+  }
+  applyLang(lang);
+  $$(".lang button").forEach((b) => b.addEventListener("click", () => {
+    applyLang(b.dataset.lang);
+    try { localStorage.setItem("lang-choice", lang); } catch (_) {}
+  }));
 
-  esBtn.addEventListener("click", () => setLanguage("es"));
-  enBtn.addEventListener("click", () => setLanguage("en"));
-  setLanguage(localStorage.getItem("language") || "en");
+  /* ---------------- Stagger indexes ---------------- */
+  $$(".stagger").forEach((list) => [...list.children].forEach((c, i) => c.style.setProperty("--i", i)));
 
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    siteNav.classList.toggle("open");
+  /* ---------------- Architecture toggle ---------------- */
+  archToggle.addEventListener("click", () => {
+    arch.hidden = !arch.hidden;
+    archToggle.setAttribute("aria-expanded", String(!arch.hidden));
+    archLabel.textContent = dict[lang][arch.hidden ? "rc.arch" : "rc.archHide"];
   });
 
-  document.querySelectorAll(".nav-links a").forEach((link) => {
-    link.addEventListener("click", () => {
-      siteNav.classList.remove("open");
-      hamburger.classList.remove("active");
+  /* ---------------- Reveal on scroll ---------------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      io.unobserve(e.target);
     });
+  }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+  $$(".reveal").forEach((el) => {
+    const siblings = $$(":scope > .reveal", el.parentElement);
+    const idx = siblings.indexOf(el);
+    if (idx > 0 && el.parentElement.classList.contains("more-grid")) el.style.setProperty("--d", `${idx * 0.08}s`);
+    io.observe(el);
   });
 
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", (event) => {
-      const targetId = anchor.getAttribute("href");
-      const target = document.querySelector(targetId);
-      if (!target) {
-        return;
-      }
-      event.preventDefault();
-      const offset = header.offsetHeight + 8;
-      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top, behavior: "smooth" });
-    });
-  });
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
+  /* ---------------- Counters ---------------- */
+  if (!reduced) {
+    const countIO = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const to = +el.dataset.count;
+        const t0 = performance.now();
+        (function step(now) {
+          const p = Math.min(1, (now - t0) / 1400);
+          el.textContent = Math.round(to * (1 - Math.pow(1 - p, 4)));
+          if (p < 1) requestAnimationFrame(step);
+        })(t0);
+        countIO.unobserve(el);
       });
-    },
-    { threshold: 0.15 }
-  );
+    }, { threshold: 0.6 });
+    $$("[data-count]").forEach((el) => { el.textContent = "0"; countIO.observe(el); });
+  }
 
-  document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
+  /* ---------------- Header / progress / active nav ---------------- */
+  const header = $(".site-header");
+  const progress = $(".scroll-progress");
+  function onScroll() {
+    const y = window.scrollY;
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+    header.classList.toggle("scrolled", y > 30);
+  }
+  addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { onScroll(); scrollFx(); ticking = false; }); } }, { passive: true });
+  let ticking = false;
+  onScroll();
 
-  window.addEventListener("scroll", () => {
-    header.classList.toggle("scrolled", window.scrollY > 24);
+  /* ---------------- Scroll-driven effects ---------------- */
+  const heroGrid = $(".hero-grid");
+  const phoneSets = $$(".phones");
+  const timeline = $(".timeline");
+  const timelineItems = $$(".timeline li");
+  function scrollFx() {
+    if (reduced) return;
+    const y = window.scrollY;
+    const vh = innerHeight;
+    if (y < vh * 1.2) {
+      heroGrid.style.translate = `0 ${y * 0.18}px`;
+      heroGrid.style.opacity = String(Math.max(0, 1 - y / (vh * 0.9)));
+    }
+    phoneSets.forEach((set) => {
+      const r = set.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      const center = (r.top + r.height / 2 - vh / 2) / vh;
+      set.style.setProperty("--py", `${center * 60}px`);
+    });
+    const tr = timeline.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, (vh * 0.6 - tr.top) / tr.height));
+    timeline.style.setProperty("--tp", p);
+    timelineItems.forEach((li) => li.classList.toggle("lit", li.getBoundingClientRect().top < vh * 0.6));
+  }
+  scrollFx();
+
+  /* ---------------- Pointer effects ---------------- */
+  if (!reduced && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    $$(".spot").forEach((el) => el.addEventListener("pointermove", (e) => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty("--mx", `${e.clientX - r.left}px`);
+      el.style.setProperty("--my", `${e.clientY - r.top}px`);
+    }));
+    $$(".magnetic").forEach((el) => {
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect();
+        el.style.translate = `${(e.clientX - r.left - r.width / 2) * 0.2}px ${(e.clientY - r.top - r.height / 2) * 0.3}px`;
+      });
+      el.addEventListener("pointerleave", () => { el.style.translate = ""; });
+    });
+    const photo = $(".hero-photo img");
+    $(".hero").addEventListener("pointermove", (e) => {
+      const x = e.clientX / innerWidth - 0.5, y = e.clientY / innerHeight - 0.5;
+      photo.style.translate = `${x * -12}px ${y * -12}px`;
+    });
+  }
+
+  const navLinks = $$(".site-nav a");
+  const sectionIO = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      navLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`));
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  $$("main section[id]").forEach((s) => sectionIO.observe(s));
+
+  /* ---------------- Mobile menu ---------------- */
+  const menuBtn = $(".menu-btn");
+  const setMenu = (open) => {
+    document.body.classList.toggle("menu-open", open);
+    menuBtn.setAttribute("aria-expanded", String(open));
+  };
+  menuBtn.addEventListener("click", () => setMenu(!document.body.classList.contains("menu-open")));
+  navLinks.forEach((a) => a.addEventListener("click", () => setMenu(false)));
+
+  /* ---------------- Hero canvas: calm route network ---------------- */
+  const canvas = $(".hero-canvas");
+  const ctx = canvas.getContext("2d");
+  let W, H, nodes = [], travelers = [];
+  const LINK = 140;
+
+  function setupCanvas() {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    W = canvas.clientWidth; H = canvas.clientHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = Math.round(Math.min(60, (W * H) / 22000));
+    nodes = Array.from({ length: n }, () => ({
+      x: Math.random() * W, y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.12, vy: (Math.random() - 0.5) * 0.12
+    }));
+    travelers = Array.from({ length: Math.max(2, Math.round(n / 12)) }, () => {
+      const a = (Math.random() * n) | 0;
+      return { a, b: next(a), t: Math.random() };
+    });
+  }
+  function next(i) {
+    const ranked = nodes.map((n, j) => [(n.x - nodes[i].x) ** 2 + (n.y - nodes[i].y) ** 2, j]).filter(([, j]) => j !== i).sort((p, q) => p[0] - q[0]);
+    return ranked[(Math.random() * 3) | 0][1];
+  }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    for (const n of nodes) {
+      if (!reduced) { n.x += n.vx; n.y += n.vy; }
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+    }
+    ctx.lineWidth = 1;
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i], b = nodes[j];
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d > LINK) continue;
+        ctx.strokeStyle = `rgba(255,255,255,${(1 - d / LINK) * 0.09})`;
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      }
+    }
+    ctx.fillStyle = "rgba(255,255,255,.3)";
+    for (const n of nodes) { ctx.beginPath(); ctx.arc(n.x, n.y, 1.2, 0, Math.PI * 2); ctx.fill(); }
+    for (const t of travelers) {
+      if (!reduced) t.t += 0.004;
+      if (t.t >= 1) { t.a = t.b; t.b = next(t.a); t.t = 0; }
+      const A = nodes[t.a], B = nodes[t.b];
+      const x = A.x + (B.x - A.x) * t.t, y = A.y + (B.y - A.y) * t.t;
+      ctx.strokeStyle = "rgba(91,157,255,.4)";
+      ctx.beginPath(); ctx.moveTo(A.x, A.y); ctx.lineTo(x, y); ctx.stroke();
+      ctx.fillStyle = "#5b9dff";
+      ctx.beginPath(); ctx.arc(x, y, 2, 0, Math.PI * 2); ctx.fill();
+    }
+    if (heroVisible && !reduced) requestAnimationFrame(draw);
+  }
+  let heroVisible = true;
+  setupCanvas();
+  draw();
+  if (!reduced) {
+    new IntersectionObserver(([e]) => {
+      const was = heroVisible;
+      heroVisible = e.isIntersecting;
+      if (heroVisible && !was) requestAnimationFrame(draw);
+    }).observe($(".hero"));
+  }
+  let resizeT;
+  addEventListener("resize", () => { clearTimeout(resizeT); resizeT = setTimeout(() => { setupCanvas(); if (reduced) draw(); }, 200); });
+
+  /* ---------------- Email copy ---------------- */
+  const toast = $(".toast");
+  $(".email-btn").addEventListener("click", async (e) => {
+    const email = e.currentTarget.dataset.email;
+    try { await navigator.clipboard.writeText(email); } catch (_) { location.href = `mailto:${email}`; return; }
+    toast.textContent = dict[lang]["toast.copied"];
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 2000);
   });
-});
-  
+
+  $(".year").textContent = new Date().getFullYear();
+})();

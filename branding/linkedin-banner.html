@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn banner</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #08090c; --text: #f2f3f6; --text-2: #c4c6d0; --muted: #868996; --accent: #5b9dff; --line: rgba(255,255,255,.1); }
+  html, body { margin: 0; background: var(--bg); }
+  .banner { position: relative; width: 1584px; height: 396px; overflow: hidden; background: var(--bg); font-family: Inter, sans-serif; color: var(--text); }
+  canvas { position: absolute; inset: 0; }
+  .glow { position: absolute; width: 900px; height: 900px; right: -200px; top: -520px; border-radius: 50%; background: radial-gradient(circle, rgba(91,157,255,.22), transparent 62%); }
+  .glow.b { width: 700px; height: 700px; left: 380px; right: auto; top: 120px; background: radial-gradient(circle, rgba(91,157,255,.08), transparent 60%); }
+  .content { position: absolute; left: 540px; right: 120px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; }
+  .kicker { font-family: "JetBrains Mono", monospace; font-size: 17px; color: var(--text-2); display: inline-flex; align-items: center; gap: 12px; align-self: flex-start; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; padding: 7px 16px; background: rgba(8,9,12,.6); }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px rgba(91,157,255,.18); }
+  h1 { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 50px; letter-spacing: -0.04em; line-height: 1; margin: 24px 0 16px; white-space: nowrap; }
+  h1 span { color: var(--accent); }
+  .stack { font-size: 22px; color: var(--text-2); }
+  .stack b { color: var(--text); font-weight: 500; }
+  .products { display: flex; gap: 12px; margin-top: 26px; }
+  .chip { font-family: "JetBrains Mono", monospace; font-size: 15px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); color: var(--text-2); background: rgba(255,255,255,.03); }
+  .chip.core { border-color: rgba(91,157,255,.45); background: rgba(91,157,255,.1); color: var(--text); }
+  .logo { position: absolute; right: 56px; top: 40px; font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 30px; letter-spacing: -0.05em; }
+  .logo span { color: var(--accent); }
+  .bar { position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--accent) 40%, var(--accent) 60%, transparent); opacity: .8; }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <canvas width="1584" height="396"></canvas>
+    <div class="glow"></div>
+    <div class="glow b"></div>
+    <div class="bar"></div>
+    <div class="logo">FC<span>.</span></div>
+    <div class="content">
+      <div class="kicker"><span class="dot"></span>Systems Engineer · Buenos Aires, AR</div>
+      <h1>Fullstack Developer <span>·</span> Mobile &amp; Backend</h1>
+      <p class="stack" style="margin:0"><b>Flutter</b> · <b>Python</b> · FastAPI · Django · PostgreSQL · Firebase</p>
+      <div class="products">
+        <span class="chip core">Viajapp</span>
+        <span class="chip core">Resident Concierge</span>
+        <span class="chip">GCCS</span>
+        <span class="chip">iNSPECT</span>
+      </div>
+    </div>
+  </div>
+<script>
+  // Static "route network", seeded so the render is reproducible.
+  let seed = 7;
+  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const c = document.querySelector("canvas"), ctx = c.getContext("2d");
+  const W = 1584, H = 396;
+  const nodes = Array.from({ length: 90 }, () => ({ x: rnd() * W, y: rnd() * H }));
+  for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
+    const a = nodes[i], b = nodes[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+    if (d > 150) continue;
+    ctx.strokeStyle = `rgba(255,255,255,${(1 - d / 150) * 0.1})`;
+    ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+  }
+  ctx.fillStyle = "rgba(255,255,255,.35)";
+  nodes.forEach((n) => { ctx.beginPath(); ctx.arc(n.x, n.y, 1.4, 0, 7); ctx.fill(); });
+  // A few highlighted routes
+  for (let k = 0; k < 7; k++) {
+    const a = nodes[(rnd() * nodes.length) | 0];
+    const b = nodes.reduce((best, n) => (n !== a && Math.hypot(n.x - a.x, n.y - a.y) < Math.hypot(best.x - a.x, best.y - a.y) ? n : best), nodes[a === nodes[0] ? 1 : 0]);
+    const g = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
+    g.addColorStop(0, "rgba(91,157,255,0)"); g.addColorStop(1, "rgba(91,157,255,.8)");
+    ctx.strokeStyle = g; ctx.lineWidth = 1.6;
+    ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    ctx.fillStyle = "#5b9dff"; ctx.shadowColor = "#5b9dff"; ctx.shadowBlur = 12;
+    ctx.beginPath(); ctx.arc(b.x, b.y, 2.6, 0, 7); ctx.fill(); ctx.shadowBlur = 0;
+  }
+  // Fade the network under the text and the profile-photo corner.
+  const fade = ctx.createLinearGradient(0, 0, W, 0);
+  fade.addColorStop(0, "rgba(8,9,12,.55)"); fade.addColorStop(.35, "rgba(8,9,12,0)"); fade.addColorStop(.55, "rgba(8,9,12,.55)"); fade.addColorStop(1, "rgba(8,9,12,.2)");
+  ctx.fillStyle = fade; ctx.fillRect(0, 0, W, H);
+</script>
+</body>
+</html>
