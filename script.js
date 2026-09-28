@@ -62,7 +62,9 @@
     "archive.trade": "Extranet de clientes para una empresa de granos",
     "archive.miel": "Sitio web para un productor de miel",
 
-    "about.eyebrow": "Experiencia y formación",
+    "about.exp": "Experiencia",
+    "about.edu": "Educación",
+    "t.4d": "Título intermedio.",
     "t.now": "hoy",
     "t.1t": "Desarrollador Fullstack · Gilson Housing Partners",
     "t.1d": "Resident Concierge (mobile principal), GCCS, iNSPECT y los servicios de Concierge.",
@@ -186,8 +188,7 @@
   /* ---------------- Scroll-driven effects ---------------- */
   const heroGrid = $(".hero-grid");
   const phoneSets = $$(".phones");
-  const timeline = $(".timeline");
-  const timelineItems = $$(".timeline li");
+  const timelines = $$(".timeline");
   function scrollFx() {
     if (reduced) return;
     const y = window.scrollY;
@@ -202,10 +203,11 @@
       const center = (r.top + r.height / 2 - vh / 2) / vh;
       set.style.setProperty("--py", `${center * 60}px`);
     });
-    const tr = timeline.getBoundingClientRect();
-    const p = Math.min(1, Math.max(0, (vh * 0.6 - tr.top) / tr.height));
-    timeline.style.setProperty("--tp", p);
-    timelineItems.forEach((li) => li.classList.toggle("lit", li.getBoundingClientRect().top < vh * 0.6));
+    timelines.forEach((tl) => {
+      const tr = tl.getBoundingClientRect();
+      tl.style.setProperty("--tp", Math.min(1, Math.max(0, (vh * 0.6 - tr.top) / tr.height)));
+      $$("li", tl).forEach((li) => li.classList.toggle("lit", li.getBoundingClientRect().top < vh * 0.6));
+    });
   }
   scrollFx();
 
